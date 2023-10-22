@@ -1,5 +1,12 @@
-# Replication Project Template
+# Replication of People Construct Simplified Mental Representations to Plan
 
-This is a GitHub template to use for replications projects in PSYCH 251. Create a new repo using this as a template in order to use it.
+<p align="center" style="font-size: smaller">
+  <img width="65%" src="https://github.com/psych251/ho2022/assets/51468707/257ed673-e6dc-4538-bc0f-d6955184123b"></img><br/>
+  From [Behind the Paper: People construct simplified mental representations to plan](https://socialsciences.nature.com/posts/people-construct-simplified-mental-representations-to-plan)
+</p>
 
-The template contains the replication project template as well as a file called `anonymize.py` that you can run to remove personally-identifiable information from the data exported by Qualtrics. Just run `python anonymize.py` to anonymize all Qualtrics `csv` files in the `data` directory.
+Replication project of Critical Mazes Recall Experiment from Ho, M. K., Abel, D., Correa, C. G., Littman, M. L., Cohen, J. D., & Griffiths, T. L. (2022). *People construct simplified mental representations to plan.* Nature, 606(7912), 129-136.
+
+RPubs link to report: https://rpubs.com/justintheyang/wu2021replication <br>
+Link to original paper: https://sarahawu.github.io/assets/papers/wu2021cooks.pdf
+
