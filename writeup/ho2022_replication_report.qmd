@@ -1,6 +1,6 @@
 ---
-title: "Replication of Study X by Sample & Sample (20xx, Psychological Science)"
-author: "Replication Author[s] (contact information)"
+title: "Replication of Critical Mazes Recall Experiment from Mark Ho et al. (2022). *People construct simplified mental representations to plan*. Nature."
+author: "Justin Yang (justin.yang@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 format:
   html:
@@ -12,7 +12,16 @@ format:
 
 ## Introduction
 
-[No abstract is needed.]  Each replication project will have a straightforward, no frills report of the study and results.  These reports will be publicly available as supplementary material for the aggregate report(s) of the project as a whole.  Also, to maximize project integrity, the intro and methods will be written and critiqued in advance of data collection.  Introductions can be just 1-2 paragraphs clarifying the main idea of the original study, the target finding for replication, and any other essential information.  It will NOT have a literature review -- that is in the original publication. You can write both the introduction and the methods in past tense.  
+I will be replicating the results shown in figure 3 of the paper *People construct simplified mental representations to plan* by Mark Ho et al. (2022).
+
+In this paper, the authors propose task construal -- a computational framework of planning that allows for the construction of simplified task representations prior to planning, claiming that this capacity to control our mental representations better mirrors human behavior. I am interested in understanding how we might construct and use flexible representations for mental simulation, so this work in the planning domain is highly relevant. In particular, their use of memory traces as a tool to probe whether an object was represented during planning is is methodologically relevant to my work as I look for ways to probe the content of our mental representations in my research. 
+
+For this replication, I will recreate the critical mazes recall experiment where the participants are first asked to navigate a maze composed of tetromimo-shaped obstacles, and then probed on their awareness of each obstacle after completing the navigation. Specifically, I will be reproducing the finding on figure 3a, where we plot a histogram of the participants' mean awareness of each obstacle, splitting on whether or not the value-guided construal model assigned less than or greater than 50% probability of including the obstacle in the constral.
+
+Rather than using base psiTurk and jsPsych (v.6.0.1), I will be using Prolific and migrating the code to the most recent version of jsPsych (v.7.3.3) for ease of future use. Rather than regenerating the scores from the computational models, I will use the same stimuli in the original paper. To generate the figures, I will directly compare the results with the model outputs from the original paper (i.e., I will not be recreating the model from scratch). The primary challenge will lie in recreating the behavioral experiment, as the plots comparing model and human performance are easier to reproduce using existing model outputs.
+
+[Link to repository](https://github.com/psych251/ho2022)<br>
+[Link to paper](https://github.com/psych251/ho2022/blob/main/original_paper/Ho%20et%20al.%20-%202022%20-%20People%20construct%20simplified%20mental%20representations.pdf) 
 
 
 ## Methods
