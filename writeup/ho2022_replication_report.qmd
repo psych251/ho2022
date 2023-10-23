@@ -1,5 +1,5 @@
 ---
-title: "Replication of Critical Mazes Recall Experiment from Mark Ho et al. (2022). *People construct simplified mental representations to plan*. Nature."
+title: "Replication of initial experiment from Mark Ho et al. (2022). *People construct simplified mental representations to plan*. Nature."
 author: "Justin Yang (justin.yang@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 format:
@@ -8,85 +8,298 @@ format:
     toc_depth: 3
 ---
 
+
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
 
 ## Introduction
 
-I will be replicating the results shown in figure 3 of the paper *People construct simplified mental representations to plan* by Mark Ho et al. (2022).
+I will replicate the results shown in Figure 3 of the paper *People construct simplified mental representations to plan* by Mark Ho et al. (2022).
 
-In this paper, the authors propose task construal -- a computational framework of planning that allows for the construction of simplified task representations prior to planning, claiming that this capacity to control our mental representations better mirrors human behavior. I am interested in understanding how we might construct and use flexible representations for mental simulation, so this work in the planning domain is highly relevant. In particular, their use of memory traces as a tool to probe whether an object was represented during planning is is methodologically relevant to my work as I look for ways to probe the content of our mental representations in my research. 
+In this paper, the authors propose task construal – a computational framework of planning that allows for constructing simplified task representations before planning, claiming that this capacity to control our mental representations better mirrors human behavior. Specifically, the authors derive a model of value-guided construal under the resource-rational perspective that an ideal, cognitively limited decision-maker should form value-guided construals that balance the complexity of a representation and its use for planning and acting. I am interested in understanding how we might construct and use flexible representations for mental simulation, so this work in the planning domain is highly relevant. In particular, their use of memory traces to probe whether an object was represented during planning is methodologically relevant to my work as I look for ways to explore the content of our mental representations in my research.
 
-For this replication, I will recreate the critical mazes recall experiment where the participants are first asked to navigate a maze composed of tetromimo-shaped obstacles, and then probed on their awareness of each obstacle after completing the navigation. Specifically, I will be reproducing the finding on figure 3a, where we plot a histogram of the participants' mean awareness of each obstacle, splitting on whether or not the value-guided construal model assigned less than or greater than 50% probability of including the obstacle in the constral.
+For this replication, I will recreate the initial experiment where the participants are first asked to navigate a maze composed of tetromino-shaped obstacles and then probed on their awareness of each obstacle after completing the navigation. Specifically, I will be reproducing the finding in Figure 3a, where they plot a histogram of the participants’ mean awareness of each obstacle, splitting on whether or not the value-guided construal model assigned less than or greater than 50% probability of including the obstacle in the construal.
 
-Rather than using base psiTurk and jsPsych (v.6.0.1), I will be using Prolific and migrating the code to the most recent version of jsPsych (v.7.3.3) for ease of future use. Rather than regenerating the scores from the computational models, I will use the same stimuli in the original paper. To generate the figures, I will directly compare the results with the model outputs from the original paper (i.e., I will not be recreating the model from scratch). The primary challenge will lie in recreating the behavioral experiment, as the plots comparing model and human performance are easier to reproduce using existing model outputs.
+Rather than using psiTurk and jsPsych (v.6.0.1), I will be using Prolific on its own and migrating the code to the most recent version of jsPsych (v.7.3.3) for ease of future use. Rather than regenerating the scores from the computational models, I will use the same stimuli in the original paper. To generate the figures, I will directly compare the results with the model outputs from the original paper (i.e., I will not be recreating the model from scratch). The primary challenge will lie in recreating the behavioral experiment.
 
 [Link to repository](https://github.com/psych251/ho2022)<br>
-[Link to paper](https://github.com/psych251/ho2022/blob/main/original_paper/Ho%20et%20al.%20-%202022%20-%20People%20construct%20simplified%20mental%20representations.pdf) 
+[Link to paper](https://github.com/psych251/ho2022/blob/main/original_paper/Ho%20et%20al.%20-%202022%20-%20People%20construct%20simplified%20mental%20representations.pdf)<br>
+[Link to behavioral experiment (doesn't exist yet)](https://justintheyang.github.io/)
 
 
 ## Methods
 
 ### Power Analysis
 
-Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.
+~~Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.~~ 
+
+Will be covered next week. For the primary analysis, the authors report $\chi^2(1, N=84)=23.03$, $p = 1.6 \times 10^{-6}$, effect size $w = 0.52$
+
 
 ### Planned Sample
 
-Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.
+In the original paper, the authors requested 200 participants on Prolific and wrote that a trial was excluded if any of the following occured during navigation: 
+
+* \>5,000 ms was spent at the initial state
+* \>2,000 ms was spent at any non-initial state
+* \>20,000 ms was spent on the entire trial 
+* \>1,500 ms was spent in the last three steps
+
+Participants with <80% of trials after exclusions or who failed 2 of 3 comprehension questions were excluded, which resulted in n = 161 participants’ data being analysed. The authors reported the following demographics: median age of 28; 81 male, 75 female, 5 neither
 
 ### Materials
 
-All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+Materials relevant to the study can be found [here](https://github.com/markkho/value-guided-construal/tree/main/experiments/exp1). The preregistration is [here](https://osf.io/mv3ux). The primary material needed is the set of 12 mazes. which is found [here](https://github.com/markkho/value-guided-construal/tree/main/experiments/exp1).
 
 ### Procedure	
 
-Can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+>Our initial experiment used a maze-navigation task in which the participants moved a circle from a starting location on a grid to a goal location using the arrow keys. The set of initial mazes consisted of twelve 11×11 mazes with seven blue tetronimo-shaped obstacles and centre walls arranged in a cross that blocked movement. On each trial, the participants were first shown a screen displaying only the centre walls. When they pressed the spacebar, the circle they controlled, the goal and the obstacles appeared, and they could begin moving immediately. Moreover, to ensure that the participants remained focused on moving, we placed a green square on the goal that shrank and would disappear after 1,000 ms but reset whenever an arrow key
+was pressed, except at the beginning of the trial when the green square took longer to shrink (5,000 ms). The participants received US$0.10 for reaching the goal without the green square disappearing (in addition to the base pay of US$0.98). The mazes were pseudorandomly rotated
+or flipped, so the start and end state was constantly changing, and the order of mazes was pseudorandomized. After completing each trial, the participants received awareness probes, which showed a static image of the maze they had just navigated, with one of the obstacles
+shown in light blue. The participants were asked “How aware of the highlighted obstacle were you at any point?” and could respond using an eight-point scale (which was rescaled to 0–1 for analyses). Probes were presented for the seven obstacles in a maze. None of the probes
+were associated with a bonus.
+
 
 ### Analysis Plan
 
-Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.  
+I aim to follow the following analysis plan: 
 
-**Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
++ Collect data
++ Preprocessing and apply exclusion criteria using [this python script](https://github.com/markkho/value-guided-construal/blob/main/experiments/exp1/prep_results.py) 
++ Generate $\chi^2$ test and figure 3a using [this jupyter notebook](https://github.com/markkho/value-guided-construal/blob/main/analyses/exp-1.ipynb)
+
+The **key analysis of interest** is the $\chi^2$ test for independence. The authors first split the obstacles across mazes on the basis of whether the value-guided construal model assigned a probability of less than or equal to 0.5 or greater than 0.5. Then after also splitting on the basis of whether mean awareness responses were less than or equal to 0.5 or greater than 0.5, they used a $\chi^2$ test for independence and found that this awareness split was predicted by value-guided construal ($\chi^2(1, N=84)=23.03$, $p = 1.6 \times 10^{-6}$, effect size $w = 0.52$).
+
+I also aim to reconstruct the plot from figure 3a, which is a histogram of participant mean awareness responses, splitting the data on whether value-guided construal assigned a probability of less than or equal to 0.5 or greater than 0.5. 
+
 
 ### Differences from Original Study
 
-Explicitly describe known differences in sample, setting, procedure, and analysis plan from original study.  The goal, of course, is to minimize those differences, but differences will inevitably occur.  Also, note whether such differences are anticipated to make a difference based on claims in the original article or subsequent published research on the conditions for obtaining the effect.
+I will aim to recreate the experiment precisely using jsPsych version 7.3, however differences in versions may result in small changes in visual display (e.g., font) in the experiment. Aside from that, a separate random sample of participants will be recruited on Prolific. 
 
-### Methods Addendum (Post Data Collection)
+<!-- ### Methods Addendum (Post Data Collection) -->
 
-You can comment this section out prior to final report with data collection.
+<!-- You can comment this section out prior to final report with data collection. -->
 
-#### Actual Sample
-  Sample size, demographics, data exclusions based on rules spelled out in analysis plan
+<!-- #### Actual Sample -->
+<!--   Sample size, demographics, data exclusions based on rules spelled out in analysis plan~~ -->
 
-#### Differences from pre-data collection methods plan
-  Any differences from what was described as the original plan, or “none”.
-
+<!-- #### Differences from pre-data collection methods plan -->
+<!--   Any differences from what was described as the original plan, or “none”. -->
 
 ## Results
 
 
 ### Data preparation
 
-Data preparation following the analysis plan.
-	
-```{r include=F}
-### Data Preparation
+Can this be done in python? The original data preparation code is written in python [here](https://github.com/markkho/value-guided-construal/blob/main/analyses/prep_data.py).
 
-#### Load Relevant Libraries and Functions
-
-#### Import data
-
-#### Data exclusion / filtering
-
-#### Prepare data for analysis - create columns etc.
 ```
+import pandas as pd
+import numpy as np
+import seaborn as sns
+from vgc_project import utils, gridutils
+from msdm.domains import GridWorld
+from vgc_project.modelinterface import create_modeling_interface
+
+import json
+from functools import lru_cache
+from itertools import combinations, product
+import warnings
+from tqdm import tqdm
+sem = lambda c: np.std(c)/np.sqrt(np.sum(c != np.nan))
+import matplotlib.pyplot as plt
+import sys
+import logging
+logger = logging.getLogger()
+logging.basicConfig(stream=sys.stdout)
+logger.setLevel(logging.WARNING)
+
+import os
+DATA_DIRECTORY = "../experiments"
+
+# ========= #
+# Utilities #
+# ========= #
+@lru_cache()
+def make_gridworld(tile_array):
+    gw = GridWorld(
+        tile_array,
+        initial_features="S",
+        absorbing_features="G",
+        wall_features="#0123456789",
+        step_cost=-1
+    )
+    def plot(*args, **kwargs):
+        kwargs = {
+            "featurecolors": {
+                "#": 'k',
+                "G": "green",
+                **{k: 'mediumblue' for k in "0123456789"}
+            },
+            "plot_walls": False,
+            **kwargs
+        }
+        return GridWorld.plot(gw, *args, **kwargs)
+    gw.plot = plot
+    return gw
+
+def calc_nav_mindist(navtrial):
+    flocs = make_gridworld(mazes[navtrial['grid']]).feature_locations
+    dists = {}
+    for obs, locs in flocs.items():
+        if obs not in "0123456789":
+            continue
+        locs = [(l['x'], l['y']) for l in locs]
+        dist = gridutils.min_dist(navtrial['state_traj'], locs)
+        dists[f"obs-{obs}"] = dist['mindist']
+    return pd.Series(dists)
+
+def calc_nav_mindist_timestep(navtrial):
+    flocs = make_gridworld(mazes[navtrial['grid']]).feature_locations
+    steps = {}
+    for obs, locs in flocs.items():
+        if obs not in "0123456789":
+            continue
+        locs = [(l['x'], l['y']) for l in locs]
+        dist = gridutils.min_dist(navtrial['state_traj'], locs, sourcename='traj')
+        mindist_loc = (dist['mintrajloc.x'], dist['mintrajloc.y'])
+        mindist_step = max(i for i, loc in enumerate(navtrial['state_traj']) if tuple(loc) == mindist_loc)
+        steps[f"obs-{obs}"] = mindist_step
+    return pd.Series(steps)
+
+# ================= #
+# Model Predictions #
+# ================= #
+mazes_0_11 = json.load(open(os.path.join(DATA_DIRECTORY, "mazes/mazes_0-11.json"), 'r'))
+mazes_12_15 = json.load(open(os.path.join(DATA_DIRECTORY, "mazes/mazes_12-15.json"), 'r'))
+mazes = {
+    **{"-".join(k.split('-')[:-1]): tuple(v) for k,v in mazes_0_11.items()},
+    **{k: tuple(v) for k,v in mazes_12_15.items()}
+}
+
+mods = create_modeling_interface(joblib_cache_location="./_analysiscache")
+model_preds = []
+for grid, tile_array in mazes.items():
+    for obs in sorted(set("0123456789") & set.union(*[set(r) for r in tile_array])):
+        preds = {
+            "grid": grid,
+            "obstacle": f"obs-{obs}",
+            **mods.predictions(tile_array, obs, seed=72193880),
+        }
+        model_preds.append(preds)
+model_preds = pd.DataFrame(model_preds)
+
+to_zscore = [
+    # 'vgc_weight',
+    'static_vgc_weight',
+    'dynamic_vgc_weight',
+    'log_traj_based_hitcount',
+    'graph_based_hitcount',
+    'goal_dist',
+    'start_dist',
+    'optpolicy_dist',
+    'walls_dist',
+    'center_dist',
+    'bottleneck_dist',
+    'sr_occ'
+]
+for col in to_zscore:
+    model_preds[col+"_Z"] = utils.zscore(model_preds[col])
+
+# ================= #
+# Experiment 1 Data #
+# ================= #
+@lru_cache()
+def get_exp1_nt():
+    def parse_exp1_navtrial(t):
+        t = t.sort_values('trialnum')
+        return pd.Series({
+            'state_traj': list(t['state']),
+            'initial_rt': t['rt'].iloc[0],
+            'total_rt': t['rt'].sum()
+        })
+    exp1_nt = pd.DataFrame(json.load(open(os.path.join(DATA_DIRECTORY, "exp1/data/navtrials.json"), 'r')))
+    exp1_nt = exp1_nt.groupby(['sessionId', 'round', 'grid', 'trans'])\
+        .apply(parse_exp1_navtrial).reset_index()
+    exp1_nt['grid'] = exp1_nt['grid'].apply(lambda gi: f"grid-{gi}")
+    return exp1_nt
+
+@lru_cache()
+def get_exp1_navdist():
+    exp1_nt = get_exp1_nt()
+    exp1_navdist = pd.concat([
+        exp1_nt[['sessionId', 'round', 'grid']],
+        exp1_nt.apply(calc_nav_mindist, axis=1)
+    ], axis=1).melt(id_vars=['sessionId', 'round', 'grid'], var_name="obstacle", value_name="nav_mindist")
+    return exp1_navdist
+
+@lru_cache()
+def get_exp1_navdist_timestep():
+    exp1_nt = get_exp1_nt()
+    exp1_navdist_timestep = pd.concat([
+        exp1_nt[['sessionId', 'round', 'grid']],
+        exp1_nt.apply(calc_nav_mindist_timestep, axis=1)
+    ], axis=1).melt(id_vars=['sessionId', 'round', 'grid'], var_name="obstacle", value_name="nav_mindist_timestep")
+    return exp1_navdist_timestep
+
+@lru_cache()
+def get_exp1_at():
+    print("Loading Experiment 1 Attention Trials")
+    exp1_at = pd.DataFrame(json.load(open(os.path.join(DATA_DIRECTORY, "exp1/data/attentiontrials.json"), 'r')))
+    exp1_at = exp1_at[['sessionId', 'round', 'grid', 'trans', 'probeobs', 'queryround', 'attention', 'rt']]\
+        .rename(columns={"probeobs": "obstacle", "queryround": "proberound"})
+    exp1_at['grid'] = exp1_at['grid'].apply(lambda gi: f"grid-{gi}")
+    exp1_at['obstacle'] = exp1_at['obstacle'].apply(lambda oi: f"obs-{oi}")
+    exp1_at['attention_N'] = utils.normalize(exp1_at['attention'], minval=-4, maxval=4)
+    exp1_navdist = get_exp1_navdist()
+    exp1_navdist_timestep = get_exp1_navdist_timestep()
+    exp1_at = exp1_at.\
+        merge(exp1_navdist, on=['sessionId', 'round', 'grid', 'obstacle']).\
+        merge(exp1_navdist_timestep, on=['sessionId', 'round', 'grid', 'obstacle'])
+    exp1_at['nav_mindist_Z'] = utils.zscore(exp1_at['nav_mindist'])
+    exp1_at['nav_mindist_timestep_Z'] = utils.zscore(exp1_at['nav_mindist_timestep'])
+    exp1_at = exp1_at.merge(model_preds)
+
+    #check that each column of data is unique
+    for c1, c2 in product(exp1_at.columns, repeat=2):
+        if c1 != c2:
+            assert not all(exp1_at[c1] == exp1_at[c2])
+    return exp1_at
+```
+
+<!-- Data preparation following the analysis plan. -->
+
+<!-- ```{r include=F} -->
+<!-- ### Data Preparation -->
+
+<!-- #### Load Relevant Libraries and Functions -->
+
+<!-- #### Import data -->
+
+<!-- #### Data exclusion / filtering -->
+
+<!-- #### Prepare data for analysis - create columns etc. -->
+<!-- ``` -->
 
 ### Confirmatory analysis
 
-The analyses as specified in the analysis plan.  
+The analysis code can be found [here](https://github.com/markkho/value-guided-construal/blob/main/analyses/exp-1.ipynb).
 
 *Side-by-side graph with original graph is ideal here*
+
+$\chi^2$ test
+```
+exp1_means = exp1_at.groupby(['grid', 'obstacle'])[["attention_N", "static_vgc_weight"]].mean().reset_index()
+exp1_contab = pd.crosstab(exp1_means["attention_N"] >= .5, exp1_means["static_vgc_weight"] >= .5)
+chi2, pval, dof, exp = stats.chi2_contingency(exp1_contab, correction=False)
+chi2_effectsize_w = np.sqrt(chi2/len(exp1_means))
+pval = analysisutils.pval_to_string(pval)
+exp1_chi2_res = f"$\chi^2({dof}, N={len(exp1_means)})={chi2:.2f}$, $p {pval}$, effect size $w = {chi2_effectsize_w:.2f}$"
+
+with open("./inputs/exp1_chi2_res_svgc.tex", "w") as f:
+    f.write(exp1_chi2_res)
+print(exp1_chi2_res)
+```
 
 ### Exploratory analyses
 
