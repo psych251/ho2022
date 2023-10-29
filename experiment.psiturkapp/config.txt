@@ -18,7 +18,7 @@ login_username = justin_experiment
 login_pw = ho2022replicationtracking
 threads = 1
 secret_key = '36cae526-06ab-4c8d-8aad-b244d0a7edf0'
-adserver_revproxy_host = https://ho2022replication-1d86faffa1c1.herokuapp.com
+adserver_revproxy_host = ho2022replication-1d86faffa1c1.herokuapp.com
 #recaptcha_key = SECRET
 
 # --- everything below this line is only relevant if you are using MTurk (via psiturk) ---
@@ -43,4 +43,4 @@ allow_repeats = false
 launch_in_sandbox_mode = true
 bonus_message = "Thanks for participating!"
 use_psiturk_ad_server = false
-ad_location = https://ho2022replication-1d86faffa1c1.herokuapp.com/pub
+ad_location = https:///pub
