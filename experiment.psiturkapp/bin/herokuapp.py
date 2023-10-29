@@ -1,5 +1,5 @@
 # Important: Must be run first to copy environment vars to config
-import bin.env_to_config 
+from bin import env_to_config
 env_to_config.copy_env_to_config()
 
 # Now the code
