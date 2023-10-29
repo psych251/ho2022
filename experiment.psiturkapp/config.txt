@@ -43,11 +43,4 @@ allow_repeats = false
 launch_in_sandbox_mode = true
 bonus_message = "Thanks for participating!"
 use_psiturk_ad_server = false
-ad_location = MY_AD_LOCATION
-
-# If you are not using the psiturk ad server, set `use_psiturk_ad_server` to `false` and point `ad_location` to your proxy server <host> and <port>. Format the ad_location like this:
-#
-#   https://<host>:<port>/ad
-
-use_psiturk_ad_server = false
 ad_location = https://ho2022replication-1d86faffa1c1.herokuapp.com/pub
