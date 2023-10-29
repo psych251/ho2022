@@ -1,2 +1,1 @@
-web: gunicorn bin.herokuapp:app -k gevent --timeout 300
-
+web: python bin/herokuapp.py
