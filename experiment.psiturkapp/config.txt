@@ -4,8 +4,8 @@ num_conds = 40
 num_counters = 1
 
 [Database Parameters]
-database_url = sqlite:///participants.db
-table_name = my_experiment
+database_url = postgres://jjcixeqyhevmbl:1e35516b7b8e2d736e647b81490f8cf41e7fd1ef7e6ac1db70960e7e32c5faca@ec2-35-169-9-79.compute-1.amazonaws.com:5432/dbnng3f3vjb7g5
+table_name = out_data
 
 [Server Parameters]
 host = 0.0.0.0
@@ -14,12 +14,12 @@ cutoff_time = 30
 logfile = server.log
 loglevel = 1
 debug = false
-login_username = MYUSERNAME
-login_pw = MYPASSWORD
+login_username = justin_experiment
+login_pw = ho2022replicationtracking
 threads = 1
-secret_key = 'SECRET'
-adserver_revproxy_host = {{ app_url }}
-recaptcha_key = SECRET
+secret_key = '36cae526-06ab-4c8d-8aad-b244d0a7edf0'
+adserver_revproxy_host = https://ho2022replication-1d86faffa1c1.herokuapp.com
+#recaptcha_key = SECRET
 
 # --- everything below this line is only relevant if you are using MTurk (via psiturk) ---
 
@@ -49,5 +49,5 @@ ad_location = MY_AD_LOCATION
 #
 #   https://<host>:<port>/ad
 
-# use_psiturk_ad_server = false
-# ad_location = https://bodacious_app_name.herokuapp.com/pub
+use_psiturk_ad_server = false
+ad_location = https://ho2022replication-1d86faffa1c1.herokuapp.com/pub

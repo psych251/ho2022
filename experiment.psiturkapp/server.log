@@ -1947,3 +1947,88 @@ UnboundLocalError: local variable 'user' referenced before assignment
 [2023-10-29 14:20:09 -0700] [3074] [INFO] Handling signal: int
 [2023-10-29 14:20:10 -0700] [3076] [INFO] Worker exiting (pid: 3076)
 [2023-10-29 14:20:10 -0700] [3074] [INFO] Shutting down: Master
+[2023-10-29 14:56:46 -0700] [33277] [INFO] Starting gunicorn 19.9.0
+[2023-10-29 14:56:46 -0700] [33277] [INFO] Listening at: http://0.0.0.0:22362 (33277)
+[2023-10-29 14:56:46 -0700] [33277] [INFO] Using worker: sync
+[2023-10-29 14:56:46 -0700] [33279] [INFO] Booting worker with pid: 33279
+2023-10-29 14:56:47,129 Secret key: 'SECRET'
+2023-10-29 14:56:47,133 /Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/psiturk_js/psiturk.js
+2023-10-29 14:57:08,313 GET /sync route with id: {{ uniqueId }}
+2023-10-29 14:57:08,322 DB error: Unique user not found.
+2023-10-29 14:57:08,323 Exception on /sync/{{ uniqueId }} [GET]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 562, in load
+    resp = json.loads(user.datastring)
+UnboundLocalError: local variable 'user' referenced before assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 565, in load
+    "condition": user.cond,
+UnboundLocalError: local variable 'user' referenced before assignment
+2023-10-29 14:57:08,494 PUT /sync route with id: {{ uniqueId }}
+2023-10-29 14:57:08,497 DB error: Unique user not found.
+2023-10-29 14:57:08,499 Exception on /sync/{{ uniqueId }} [PUT]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 592, in update
+    user.datastring = json.dumps(request.json)
+UnboundLocalError: local variable 'user' referenced before assignment
+[2023-10-29 14:58:19 -0700] [33277] [INFO] Handling signal: int
+[2023-10-29 14:58:19 -0700] [33279] [INFO] Worker exiting (pid: 33279)
+[2023-10-29 14:58:19 -0700] [33277] [INFO] Shutting down: Master
+[2023-10-29 15:08:28 -0700] [45654] [INFO] Starting gunicorn 20.0.4
+[2023-10-29 15:08:28 -0700] [45654] [INFO] Listening at: http://0.0.0.0:22362 (45654)
+[2023-10-29 15:08:28 -0700] [45654] [INFO] Using worker: gevent
+[2023-10-29 15:08:28 -0700] [45655] [INFO] Booting worker with pid: 45655
+2023-10-29 15:08:28,979 Starting scheduler in 'paused' mode -- it will not run any tasks, but it can be used to create, modify, or delete tasks.
+2023-10-29 15:08:28,984 Scheduler started
+2023-10-29 15:08:28,985 /Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/psiturk/psiturk_js/psiturk.js
+2023-10-29 15:08:45,857 GET /sync route with id: {{ uniqueId }}
+2023-10-29 15:08:45,862 DB error: Unique user not found.
+[2023-10-29 15:08:45 -0700] [45655] [ERROR] Error handling request /sync/%7B%7B%20uniqueId%20%7D%7D
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/gunicorn/workers/base_async.py", line 55, in handle
+    self.handle_request(listener_name, req, client, addr)
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/gunicorn/workers/ggevent.py", line 143, in handle_request
+    super().handle_request(listener_name, req, sock, addr)
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/gunicorn/workers/base_async.py", line 106, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2023-10-29 15:08:46,029 PUT /sync route with id: {{ uniqueId }}
+2023-10-29 15:08:46,032 DB error: Unique user not found.
+[2023-10-29 15:09:39 -0700] [45654] [INFO] Handling signal: int
+[2023-10-29 15:09:39 -0700] [45655] [INFO] Worker exiting (pid: 45655)
+[2023-10-29 15:09:39 -0700] [45654] [INFO] Shutting down: Master
