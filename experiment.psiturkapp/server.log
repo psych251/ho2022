@@ -2081,3 +2081,59 @@ TypeError: The view function did not return a valid response. The function eithe
 [2023-10-29 16:01:08 -0700] [2735] [INFO] Worker exiting (pid: 2734)
 [2023-10-29 16:01:08 -0700] [2734] [INFO] Shutting down: Master
 [2023-10-29 16:01:08 -0700] [2734] [INFO] Worker exiting (pid: 2734)
+[2023-10-29 16:04:33 -0700] [6523] [INFO] Starting gunicorn 20.0.4
+[2023-10-29 16:04:33 -0700] [6523] [INFO] Listening at: http://0.0.0.0:22362 (6523)
+[2023-10-29 16:04:33 -0700] [6523] [INFO] Using worker: gevent
+[2023-10-29 16:04:33 -0700] [6524] [INFO] Booting worker with pid: 6524
+2023-10-29 16:04:33,413 Starting scheduler in 'paused' mode -- it will not run any tasks, but it can be used to create, modify, or delete tasks.
+2023-10-29 16:04:35,129 Scheduler started
+2023-10-29 16:04:35,541 /Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/psiturk/psiturk_js/psiturk.js
+2023-10-29 16:04:44,143 GET /sync route with id: {{ uniqueId }}
+2023-10-29 16:04:44,315 DB error: Unique user not found.
+2023-10-29 16:04:44,316 Exception on /sync/{{ uniqueId }} [GET]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2023-10-29 16:04:44,551 PUT /sync route with id: {{ uniqueId }}
+2023-10-29 16:04:44,718 DB error: Unique user not found.
+[2023-10-29 16:05:14 -0700] [6523] [INFO] Handling signal: int
+[2023-10-29 16:05:14 -0700] [6524] [INFO] Worker exiting (pid: 6524)
+[2023-10-29 16:05:14 -0700] [6524] [INFO] Worker exiting (pid: 6523)
+[2023-10-29 16:05:14 -0700] [6523] [INFO] Shutting down: Master
+[2023-10-29 16:05:14 -0700] [6523] [INFO] Worker exiting (pid: 6523)
+[2023-10-29 16:07:32 -0700] [9178] [INFO] Starting gunicorn 20.0.4
+[2023-10-29 16:07:32 -0700] [9178] [INFO] Listening at: http://0.0.0.0:22362 (9178)
+[2023-10-29 16:07:32 -0700] [9178] [INFO] Using worker: gevent
+[2023-10-29 16:07:32 -0700] [9179] [INFO] Booting worker with pid: 9179
+2023-10-29 16:07:32,956 Starting scheduler in 'paused' mode -- it will not run any tasks, but it can be used to create, modify, or delete tasks.
+2023-10-29 16:07:34,648 Scheduler started
+2023-10-29 16:07:35,050 /Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/psiturk/psiturk_js/psiturk.js
+2023-10-29 16:07:37,897 PUT /sync route with id: {{ uniqueId }}
+2023-10-29 16:07:38,071 DB error: Unique user not found.
+2023-10-29 16:07:38,970 GET /sync route with id: {{ uniqueId }}
+2023-10-29 16:07:39,138 DB error: Unique user not found.
+2023-10-29 16:07:39,139 Exception on /sync/{{ uniqueId }} [GET]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2023-10-29 16:07:40,144 PUT /sync route with id: {{ uniqueId }}
+2023-10-29 16:07:40,307 DB error: Unique user not found.
+[2023-10-29 16:07:43 -0700] [9178] [INFO] Handling signal: int
+[2023-10-29 16:07:43 -0700] [9179] [INFO] Worker exiting (pid: 9179)
+[2023-10-29 16:07:43 -0700] [9179] [INFO] Worker exiting (pid: 9178)
+[2023-10-29 16:07:43 -0700] [9178] [INFO] Shutting down: Master
+[2023-10-29 16:07:43 -0700] [9178] [INFO] Worker exiting (pid: 9178)
