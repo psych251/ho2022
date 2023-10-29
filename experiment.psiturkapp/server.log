@@ -1,0 +1,1879 @@
+[2023-10-28 16:44:14 -0700] [45522] [INFO] Starting gunicorn 20.0.4
+[2023-10-28 16:44:14 -0700] [45522] [INFO] Listening at: http://0.0.0.0:22362 (45522)
+[2023-10-28 16:44:14 -0700] [45522] [INFO] Using worker: gevent
+[2023-10-28 16:44:14 -0700] [45523] [INFO] Booting worker with pid: 45523
+[2023-10-28 16:44:14 -0700] [45523] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/__init__.py", line 7, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/connectionpool.py", line 11, in <module>
+    from .exceptions import (
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/exceptions.py", line 2, in <module>
+    from .packages.six.moves.http_client import IncompleteRead as httplib_IncompleteRead
+ModuleNotFoundError: No module named 'urllib3.packages.six.moves'
+[2023-10-28 16:44:14 -0700] [45523] [INFO] Worker exiting (pid: 45523)
+[2023-10-28 16:44:44 -0700] [45522] [CRITICAL] WORKER TIMEOUT (pid:45523)
+[2023-10-28 16:44:44 -0700] [46652] [INFO] Booting worker with pid: 46652
+[2023-10-28 16:44:44 -0700] [46652] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/__init__.py", line 7, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/connectionpool.py", line 11, in <module>
+    from .exceptions import (
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/exceptions.py", line 2, in <module>
+    from .packages.six.moves.http_client import IncompleteRead as httplib_IncompleteRead
+ModuleNotFoundError: No module named 'urllib3.packages.six.moves'
+[2023-10-28 16:44:44 -0700] [46652] [INFO] Worker exiting (pid: 46652)
+[2023-10-28 16:45:14 -0700] [45522] [CRITICAL] WORKER TIMEOUT (pid:46652)
+[2023-10-28 16:45:14 -0700] [47229] [INFO] Booting worker with pid: 47229
+[2023-10-28 16:45:14 -0700] [47229] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/__init__.py", line 7, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/connectionpool.py", line 11, in <module>
+    from .exceptions import (
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/exceptions.py", line 2, in <module>
+    from .packages.six.moves.http_client import IncompleteRead as httplib_IncompleteRead
+ModuleNotFoundError: No module named 'urllib3.packages.six.moves'
+[2023-10-28 16:45:14 -0700] [47229] [INFO] Worker exiting (pid: 47229)
+[2023-10-28 16:45:44 -0700] [45522] [CRITICAL] WORKER TIMEOUT (pid:47229)
+[2023-10-28 16:45:44 -0700] [48003] [INFO] Booting worker with pid: 48003
+[2023-10-28 16:45:44 -0700] [48003] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/__init__.py", line 7, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/connectionpool.py", line 11, in <module>
+    from .exceptions import (
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/exceptions.py", line 2, in <module>
+    from .packages.six.moves.http_client import IncompleteRead as httplib_IncompleteRead
+ModuleNotFoundError: No module named 'urllib3.packages.six.moves'
+[2023-10-28 16:45:44 -0700] [48003] [INFO] Worker exiting (pid: 48003)
+[2023-10-28 16:46:14 -0700] [45522] [CRITICAL] WORKER TIMEOUT (pid:48003)
+[2023-10-28 16:46:14 -0700] [48082] [INFO] Booting worker with pid: 48082
+[2023-10-28 16:46:15 -0700] [48082] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/__init__.py", line 7, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/connectionpool.py", line 11, in <module>
+    from .exceptions import (
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/exceptions.py", line 2, in <module>
+    from .packages.six.moves.http_client import IncompleteRead as httplib_IncompleteRead
+ModuleNotFoundError: No module named 'urllib3.packages.six.moves'
+[2023-10-28 16:46:15 -0700] [48082] [INFO] Worker exiting (pid: 48082)
+[2023-10-28 16:46:45 -0700] [45522] [CRITICAL] WORKER TIMEOUT (pid:48082)
+[2023-10-28 16:46:45 -0700] [48094] [INFO] Booting worker with pid: 48094
+[2023-10-28 16:46:45 -0700] [48094] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/__init__.py", line 7, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/connectionpool.py", line 11, in <module>
+    from .exceptions import (
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/exceptions.py", line 2, in <module>
+    from .packages.six.moves.http_client import IncompleteRead as httplib_IncompleteRead
+ModuleNotFoundError: No module named 'urllib3.packages.six.moves'
+[2023-10-28 16:46:45 -0700] [48094] [INFO] Worker exiting (pid: 48094)
+[2023-10-28 16:47:15 -0700] [45522] [CRITICAL] WORKER TIMEOUT (pid:48094)
+[2023-10-28 16:47:15 -0700] [48272] [INFO] Booting worker with pid: 48272
+[2023-10-28 16:47:15 -0700] [48272] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/__init__.py", line 7, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/connectionpool.py", line 11, in <module>
+    from .exceptions import (
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/exceptions.py", line 2, in <module>
+    from .packages.six.moves.http_client import IncompleteRead as httplib_IncompleteRead
+ModuleNotFoundError: No module named 'urllib3.packages.six.moves'
+[2023-10-28 16:47:15 -0700] [48272] [INFO] Worker exiting (pid: 48272)
+[2023-10-28 16:47:45 -0700] [45522] [CRITICAL] WORKER TIMEOUT (pid:48272)
+[2023-10-28 16:47:45 -0700] [48387] [INFO] Booting worker with pid: 48387
+[2023-10-28 16:47:45 -0700] [48387] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/__init__.py", line 7, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/connectionpool.py", line 11, in <module>
+    from .exceptions import (
+  File "/Users/justyang/miniconda3/envs/experimentation/lib/python3.12/site-packages/urllib3/exceptions.py", line 2, in <module>
+    from .packages.six.moves.http_client import IncompleteRead as httplib_IncompleteRead
+ModuleNotFoundError: No module named 'urllib3.packages.six.moves'
+[2023-10-28 16:47:45 -0700] [48387] [INFO] Worker exiting (pid: 48387)
+[2023-10-28 16:48:08 -0700] [45522] [INFO] Handling signal: int
+[2023-10-28 16:48:08 -0700] [45522] [INFO] Shutting down: Master
+[2023-10-28 16:53:15 -0700] [52383] [INFO] Starting gunicorn 20.0.4
+[2023-10-28 16:53:15 -0700] [52383] [INFO] Listening at: http://0.0.0.0:22362 (52383)
+[2023-10-28 16:53:15 -0700] [52383] [INFO] Using worker: gevent
+[2023-10-28 16:53:15 -0700] [52384] [INFO] Booting worker with pid: 52384
+[2023-10-28 16:53:15 -0700] [52384] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/urllib3/__init__.py", line 7, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/urllib3/connectionpool.py", line 11, in <module>
+    from .exceptions import (
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/urllib3/exceptions.py", line 2, in <module>
+    from .packages.six.moves.http_client import IncompleteRead as httplib_IncompleteRead
+ModuleNotFoundError: No module named 'urllib3.packages.six.moves'
+[2023-10-28 16:53:15 -0700] [52384] [INFO] Worker exiting (pid: 52384)
+[2023-10-28 16:53:45 -0700] [52383] [CRITICAL] WORKER TIMEOUT (pid:52384)
+[2023-10-28 16:53:45 -0700] [52701] [INFO] Booting worker with pid: 52701
+[2023-10-28 16:53:45 -0700] [52701] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/urllib3/__init__.py", line 7, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/urllib3/connectionpool.py", line 11, in <module>
+    from .exceptions import (
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/urllib3/exceptions.py", line 2, in <module>
+    from .packages.six.moves.http_client import IncompleteRead as httplib_IncompleteRead
+ModuleNotFoundError: No module named 'urllib3.packages.six.moves'
+[2023-10-28 16:53:45 -0700] [52701] [INFO] Worker exiting (pid: 52701)
+[2023-10-28 16:54:00 -0700] [52383] [INFO] Handling signal: int
+[2023-10-28 16:54:00 -0700] [52383] [INFO] Shutting down: Master
+[2023-10-28 16:55:27 -0700] [53209] [INFO] Starting gunicorn 20.0.4
+[2023-10-28 16:55:27 -0700] [53209] [INFO] Listening at: http://0.0.0.0:22362 (53209)
+[2023-10-28 16:55:27 -0700] [53209] [INFO] Using worker: gevent
+[2023-10-28 16:55:27 -0700] [53210] [INFO] Booting worker with pid: 53210
+[2023-10-28 16:55:27 -0700] [53210] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/urllib3/__init__.py", line 7, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/urllib3/connectionpool.py", line 11, in <module>
+    from .exceptions import (
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.12/site-packages/urllib3/exceptions.py", line 2, in <module>
+    from .packages.six.moves.http_client import IncompleteRead as httplib_IncompleteRead
+ModuleNotFoundError: No module named 'urllib3.packages.six.moves'
+[2023-10-28 16:55:27 -0700] [53210] [INFO] Worker exiting (pid: 53210)
+[2023-10-28 16:55:32 -0700] [53209] [INFO] Handling signal: int
+[2023-10-28 16:55:32 -0700] [53209] [INFO] Shutting down: Master
+[2023-10-28 17:01:39 -0700] [54944] [INFO] Starting gunicorn 20.0.4
+[2023-10-28 17:01:39 -0700] [54944] [INFO] Listening at: http://0.0.0.0:22362 (54944)
+[2023-10-28 17:01:39 -0700] [54944] [INFO] Using worker: gevent
+[2023-10-28 17:01:39 -0700] [54948] [INFO] Booting worker with pid: 54948
+[2023-10-28 17:01:39 -0700] [54948] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/OpenSSL/crypto.py", line 3268, in <module>
+    _lib.OpenSSL_add_all_algorithms()
+AttributeError: module 'lib' has no attribute 'OpenSSL_add_all_algorithms'
+[2023-10-28 17:01:39 -0700] [54948] [INFO] Worker exiting (pid: 54948)
+[2023-10-28 17:01:40 -0700] [54944] [INFO] Handling signal: int
+[2023-10-28 17:01:40 -0700] [54944] [INFO] Shutting down: Master
+[2023-10-28 17:02:50 -0700] [55450] [INFO] Starting gunicorn 20.0.4
+[2023-10-28 17:02:50 -0700] [55450] [INFO] Listening at: http://0.0.0.0:22362 (55450)
+[2023-10-28 17:02:50 -0700] [55450] [INFO] Using worker: gevent
+[2023-10-28 17:02:50 -0700] [55451] [INFO] Booting worker with pid: 55451
+[2023-10-28 17:02:50 -0700] [55451] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/OpenSSL/crypto.py", line 3268, in <module>
+    _lib.OpenSSL_add_all_algorithms()
+AttributeError: module 'lib' has no attribute 'OpenSSL_add_all_algorithms'
+[2023-10-28 17:02:50 -0700] [55451] [INFO] Worker exiting (pid: 55451)
+[2023-10-28 17:02:57 -0700] [55450] [INFO] Handling signal: int
+[2023-10-28 17:02:57 -0700] [55450] [INFO] Shutting down: Master
+[2023-10-28 17:05:05 -0700] [59136] [INFO] Starting gunicorn 20.0.4
+[2023-10-28 17:05:05 -0700] [59136] [INFO] Listening at: http://0.0.0.0:22362 (59136)
+[2023-10-28 17:05:05 -0700] [59136] [INFO] Using worker: gevent
+[2023-10-28 17:05:05 -0700] [59137] [INFO] Booting worker with pid: 59137
+[2023-10-28 17:05:05 -0700] [59137] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/OpenSSL/crypto.py", line 3268, in <module>
+    _lib.OpenSSL_add_all_algorithms()
+AttributeError: module 'lib' has no attribute 'OpenSSL_add_all_algorithms'
+[2023-10-28 17:05:05 -0700] [59137] [INFO] Worker exiting (pid: 59137)
+[2023-10-28 17:05:35 -0700] [59136] [CRITICAL] WORKER TIMEOUT (pid:59137)
+[2023-10-28 17:05:35 -0700] [59196] [INFO] Booting worker with pid: 59196
+[2023-10-28 17:05:36 -0700] [59196] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/OpenSSL/crypto.py", line 3268, in <module>
+    _lib.OpenSSL_add_all_algorithms()
+AttributeError: module 'lib' has no attribute 'OpenSSL_add_all_algorithms'
+[2023-10-28 17:05:36 -0700] [59196] [INFO] Worker exiting (pid: 59196)
+[2023-10-28 17:05:49 -0700] [59136] [INFO] Handling signal: int
+[2023-10-28 17:05:49 -0700] [59136] [INFO] Shutting down: Master
+[2023-10-28 17:25:17 -0700] [72338] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:25:17 -0700] [72338] [INFO] Listening at: http://0.0.0.0:22362 (72338)
+[2023-10-28 17:25:17 -0700] [72338] [INFO] Using worker: sync
+[2023-10-28 17:25:17 -0700] [72340] [INFO] Booting worker with pid: 72340
+[2023-10-28 17:25:17 -0700] [72340] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:25:17 -0700] [72340] [INFO] Worker exiting (pid: 72340)
+[2023-10-28 17:25:17 -0700] [72338] [INFO] Shutting down: Master
+[2023-10-28 17:25:17 -0700] [72338] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:25:58 -0700] [72601] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:25:58 -0700] [72601] [INFO] Listening at: http://0.0.0.0:22362 (72601)
+[2023-10-28 17:25:58 -0700] [72601] [INFO] Using worker: sync
+[2023-10-28 17:25:58 -0700] [72603] [INFO] Booting worker with pid: 72603
+[2023-10-28 17:25:58 -0700] [72603] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:25:58 -0700] [72603] [INFO] Worker exiting (pid: 72603)
+[2023-10-28 17:25:58 -0700] [72601] [INFO] Shutting down: Master
+[2023-10-28 17:25:58 -0700] [72601] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:27:09 -0700] [75361] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:27:09 -0700] [75361] [INFO] Listening at: http://0.0.0.0:22362 (75361)
+[2023-10-28 17:27:09 -0700] [75361] [INFO] Using worker: sync
+[2023-10-28 17:27:09 -0700] [75363] [INFO] Booting worker with pid: 75363
+[2023-10-28 17:27:10 -0700] [75363] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:27:10 -0700] [75363] [INFO] Worker exiting (pid: 75363)
+[2023-10-28 17:27:10 -0700] [75361] [INFO] Shutting down: Master
+[2023-10-28 17:27:10 -0700] [75361] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:28:13 -0700] [75650] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:28:13 -0700] [75650] [INFO] Listening at: http://0.0.0.0:22362 (75650)
+[2023-10-28 17:28:13 -0700] [75650] [INFO] Using worker: sync
+[2023-10-28 17:28:13 -0700] [75652] [INFO] Booting worker with pid: 75652
+[2023-10-28 17:28:13 -0700] [75652] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:28:13 -0700] [75652] [INFO] Worker exiting (pid: 75652)
+[2023-10-28 17:28:13 -0700] [75650] [INFO] Shutting down: Master
+[2023-10-28 17:28:13 -0700] [75650] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:29:58 -0700] [76193] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:29:58 -0700] [76193] [INFO] Listening at: http://0.0.0.0:22362 (76193)
+[2023-10-28 17:29:58 -0700] [76193] [INFO] Using worker: sync
+[2023-10-28 17:29:58 -0700] [76195] [INFO] Booting worker with pid: 76195
+[2023-10-28 17:29:58 -0700] [76195] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:29:58 -0700] [76195] [INFO] Worker exiting (pid: 76195)
+[2023-10-28 17:29:58 -0700] [76193] [INFO] Shutting down: Master
+[2023-10-28 17:29:58 -0700] [76193] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:30:07 -0700] [76232] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:30:07 -0700] [76232] [INFO] Listening at: http://0.0.0.0:22362 (76232)
+[2023-10-28 17:30:07 -0700] [76232] [INFO] Using worker: sync
+[2023-10-28 17:30:07 -0700] [76234] [INFO] Booting worker with pid: 76234
+[2023-10-28 17:30:07 -0700] [76234] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:30:07 -0700] [76234] [INFO] Worker exiting (pid: 76234)
+[2023-10-28 17:30:07 -0700] [76232] [INFO] Shutting down: Master
+[2023-10-28 17:30:07 -0700] [76232] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:30:17 -0700] [76316] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:30:17 -0700] [76316] [INFO] Listening at: http://0.0.0.0:22362 (76316)
+[2023-10-28 17:30:17 -0700] [76316] [INFO] Using worker: sync
+[2023-10-28 17:30:17 -0700] [76318] [INFO] Booting worker with pid: 76318
+[2023-10-28 17:30:17 -0700] [76318] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:30:17 -0700] [76318] [INFO] Worker exiting (pid: 76318)
+[2023-10-28 17:30:17 -0700] [76316] [INFO] Shutting down: Master
+[2023-10-28 17:30:17 -0700] [76316] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:32:14 -0700] [76926] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:32:14 -0700] [76926] [INFO] Listening at: http://0.0.0.0:22362 (76926)
+[2023-10-28 17:32:14 -0700] [76926] [INFO] Using worker: sync
+[2023-10-28 17:32:14 -0700] [76928] [INFO] Booting worker with pid: 76928
+[2023-10-28 17:32:14 -0700] [76928] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:32:14 -0700] [76928] [INFO] Worker exiting (pid: 76928)
+[2023-10-28 17:32:14 -0700] [76926] [INFO] Shutting down: Master
+[2023-10-28 17:32:14 -0700] [76926] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:38:00 -0700] [78560] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:38:00 -0700] [78560] [INFO] Listening at: http://0.0.0.0:22362 (78560)
+[2023-10-28 17:38:00 -0700] [78560] [INFO] Using worker: sync
+[2023-10-28 17:38:00 -0700] [78562] [INFO] Booting worker with pid: 78562
+[2023-10-28 17:38:00 -0700] [78562] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 31, in <module>
+    from flask import Flask, render_template, render_template_string, request, \
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/__init__.py", line 19, in <module>
+    from jinja2 import Markup, escape
+ImportError: cannot import name 'Markup' from 'jinja2' (/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/__init__.py)
+[2023-10-28 17:38:00 -0700] [78562] [INFO] Worker exiting (pid: 78562)
+[2023-10-28 17:38:00 -0700] [78560] [INFO] Shutting down: Master
+[2023-10-28 17:38:00 -0700] [78560] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:38:36 -0700] [78720] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:38:36 -0700] [78720] [INFO] Listening at: http://0.0.0.0:22362 (78720)
+[2023-10-28 17:38:36 -0700] [78720] [INFO] Using worker: sync
+[2023-10-28 17:38:36 -0700] [78722] [INFO] Booting worker with pid: 78722
+[2023-10-28 17:38:36 -0700] [78722] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 31, in <module>
+    from flask import Flask, render_template, render_template_string, request, \
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/__init__.py", line 19, in <module>
+    from jinja2 import Markup, escape
+ImportError: cannot import name 'Markup' from 'jinja2' (/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/__init__.py)
+[2023-10-28 17:38:36 -0700] [78722] [INFO] Worker exiting (pid: 78722)
+[2023-10-28 17:38:36 -0700] [78720] [INFO] Shutting down: Master
+[2023-10-28 17:38:36 -0700] [78720] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:40:58 -0700] [79455] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:40:58 -0700] [79455] [INFO] Listening at: http://0.0.0.0:22362 (79455)
+[2023-10-28 17:40:58 -0700] [79455] [INFO] Using worker: sync
+[2023-10-28 17:40:58 -0700] [79457] [INFO] Booting worker with pid: 79457
+[2023-10-28 17:40:58 -0700] [79457] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 31, in <module>
+    from flask import Flask, render_template, render_template_string, request, \
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/__init__.py", line 19, in <module>
+    from jinja2 import Markup, escape
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/__init__.py", line 12, in <module>
+    from .environment import Environment
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/environment.py", line 25, in <module>
+    from .defaults import BLOCK_END_STRING
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/defaults.py", line 3, in <module>
+    from .filters import FILTERS as DEFAULT_FILTERS  # noqa: F401
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/filters.py", line 13, in <module>
+    from markupsafe import soft_unicode
+ImportError: cannot import name 'soft_unicode' from 'markupsafe' (/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/markupsafe/__init__.py)
+[2023-10-28 17:40:58 -0700] [79457] [INFO] Worker exiting (pid: 79457)
+[2023-10-28 17:40:58 -0700] [79455] [INFO] Shutting down: Master
+[2023-10-28 17:40:58 -0700] [79455] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:42:35 -0700] [80040] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:42:35 -0700] [80040] [INFO] Listening at: http://0.0.0.0:22362 (80040)
+[2023-10-28 17:42:35 -0700] [80040] [INFO] Using worker: sync
+[2023-10-28 17:42:35 -0700] [80042] [INFO] Booting worker with pid: 80042
+[2023-10-28 17:42:35 -0700] [80042] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:42:35 -0700] [80042] [INFO] Worker exiting (pid: 80042)
+[2023-10-28 17:42:35 -0700] [80040] [INFO] Shutting down: Master
+[2023-10-28 17:42:35 -0700] [80040] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:43:01 -0700] [80135] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:43:01 -0700] [80135] [INFO] Listening at: http://0.0.0.0:22362 (80135)
+[2023-10-28 17:43:01 -0700] [80135] [INFO] Using worker: sync
+[2023-10-28 17:43:01 -0700] [80137] [INFO] Booting worker with pid: 80137
+[2023-10-28 17:43:01 -0700] [80137] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:43:01 -0700] [80137] [INFO] Worker exiting (pid: 80137)
+[2023-10-28 17:43:01 -0700] [80135] [INFO] Shutting down: Master
+[2023-10-28 17:43:01 -0700] [80135] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:44:16 -0700] [80445] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:44:16 -0700] [80445] [INFO] Listening at: http://0.0.0.0:22362 (80445)
+[2023-10-28 17:44:16 -0700] [80445] [INFO] Using worker: sync
+[2023-10-28 17:44:16 -0700] [80447] [INFO] Booting worker with pid: 80447
+[2023-10-28 17:44:17 -0700] [80447] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:44:17 -0700] [80447] [INFO] Worker exiting (pid: 80447)
+[2023-10-28 17:44:17 -0700] [80445] [INFO] Shutting down: Master
+[2023-10-28 17:44:17 -0700] [80445] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:44:20 -0700] [80466] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:44:20 -0700] [80466] [INFO] Listening at: http://0.0.0.0:22362 (80466)
+[2023-10-28 17:44:20 -0700] [80466] [INFO] Using worker: sync
+[2023-10-28 17:44:20 -0700] [80468] [INFO] Booting worker with pid: 80468
+[2023-10-28 17:44:20 -0700] [80468] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:44:20 -0700] [80468] [INFO] Worker exiting (pid: 80468)
+[2023-10-28 17:44:20 -0700] [80466] [INFO] Shutting down: Master
+[2023-10-28 17:44:20 -0700] [80466] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:44:22 -0700] [80488] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:44:22 -0700] [80488] [INFO] Listening at: http://0.0.0.0:22362 (80488)
+[2023-10-28 17:44:22 -0700] [80488] [INFO] Using worker: sync
+[2023-10-28 17:44:22 -0700] [80490] [INFO] Booting worker with pid: 80490
+[2023-10-28 17:44:22 -0700] [80490] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:44:22 -0700] [80490] [INFO] Worker exiting (pid: 80490)
+[2023-10-28 17:44:22 -0700] [80488] [INFO] Shutting down: Master
+[2023-10-28 17:44:22 -0700] [80488] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:44:24 -0700] [80508] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:44:24 -0700] [80508] [INFO] Listening at: http://0.0.0.0:22362 (80508)
+[2023-10-28 17:44:24 -0700] [80508] [INFO] Using worker: sync
+[2023-10-28 17:44:24 -0700] [80510] [INFO] Booting worker with pid: 80510
+[2023-10-28 17:44:24 -0700] [80510] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:44:24 -0700] [80510] [INFO] Worker exiting (pid: 80510)
+[2023-10-28 17:44:24 -0700] [80508] [INFO] Shutting down: Master
+[2023-10-28 17:44:24 -0700] [80508] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:46:09 -0700] [80934] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:46:09 -0700] [80934] [INFO] Listening at: http://0.0.0.0:22362 (80934)
+[2023-10-28 17:46:09 -0700] [80934] [INFO] Using worker: sync
+[2023-10-28 17:46:09 -0700] [80936] [INFO] Booting worker with pid: 80936
+[2023-10-28 17:46:09 -0700] [80936] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 31, in <module>
+    from flask import Flask, render_template, render_template_string, request, \
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/__init__.py", line 21, in <module>
+    from .app import Flask, Request, Response
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 26, in <module>
+    from . import cli, json
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/cli.py", line 32, in <module>
+    from .helpers import get_debug_flag, get_env, get_load_dotenv
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/helpers.py", line 25, in <module>
+    from werkzeug.urls import url_quote
+ImportError: cannot import name 'url_quote' from 'werkzeug.urls' (/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/werkzeug/urls.py)
+[2023-10-28 17:46:09 -0700] [80936] [INFO] Worker exiting (pid: 80936)
+[2023-10-28 17:46:09 -0700] [80934] [INFO] Shutting down: Master
+[2023-10-28 17:46:09 -0700] [80934] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:46:40 -0700] [81167] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:46:40 -0700] [81167] [INFO] Listening at: http://0.0.0.0:22362 (81167)
+[2023-10-28 17:46:40 -0700] [81167] [INFO] Using worker: sync
+[2023-10-28 17:46:40 -0700] [81169] [INFO] Booting worker with pid: 81169
+[2023-10-28 17:46:40 -0700] [81169] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 31, in <module>
+    from flask import Flask, render_template, render_template_string, request, \
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/__init__.py", line 21, in <module>
+    from .app import Flask, Request, Response
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 26, in <module>
+    from . import cli, json
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/cli.py", line 32, in <module>
+    from .helpers import get_debug_flag, get_env, get_load_dotenv
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/helpers.py", line 25, in <module>
+    from werkzeug.urls import url_quote
+ImportError: cannot import name 'url_quote' from 'werkzeug.urls' (/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/werkzeug/urls.py)
+[2023-10-28 17:46:40 -0700] [81169] [INFO] Worker exiting (pid: 81169)
+[2023-10-28 17:46:40 -0700] [81167] [INFO] Shutting down: Master
+[2023-10-28 17:46:40 -0700] [81167] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:46:46 -0700] [81207] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:46:46 -0700] [81207] [INFO] Listening at: http://0.0.0.0:22362 (81207)
+[2023-10-28 17:46:46 -0700] [81207] [INFO] Using worker: sync
+[2023-10-28 17:46:46 -0700] [81209] [INFO] Booting worker with pid: 81209
+[2023-10-28 17:46:46 -0700] [81209] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 31, in <module>
+    from flask import Flask, render_template, render_template_string, request, \
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/__init__.py", line 21, in <module>
+    from .app import Flask, Request, Response
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 26, in <module>
+    from . import cli, json
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/cli.py", line 32, in <module>
+    from .helpers import get_debug_flag, get_env, get_load_dotenv
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/helpers.py", line 25, in <module>
+    from werkzeug.urls import url_quote
+ImportError: cannot import name 'url_quote' from 'werkzeug.urls' (/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/werkzeug/urls.py)
+[2023-10-28 17:46:46 -0700] [81209] [INFO] Worker exiting (pid: 81209)
+[2023-10-28 17:46:46 -0700] [81207] [INFO] Shutting down: Master
+[2023-10-28 17:46:46 -0700] [81207] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:47:46 -0700] [81579] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:47:46 -0700] [81579] [INFO] Listening at: http://0.0.0.0:22362 (81579)
+[2023-10-28 17:47:46 -0700] [81579] [INFO] Using worker: sync
+[2023-10-28 17:47:46 -0700] [81581] [INFO] Booting worker with pid: 81581
+2023-10-28 17:47:46,413 Secret key: 'SECRET'
+2023-10-28 17:47:46,421 /Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/psiturk_js/psiturk.js
+2023-10-28 17:47:51,515 GET /sync route with id: {{ uniqueId }}
+2023-10-28 17:47:51,517 DB error: Unique user not found.
+2023-10-28 17:47:51,517 Exception on /sync/{{ uniqueId }} [GET]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 562, in load
+    resp = json.loads(user.datastring)
+UnboundLocalError: local variable 'user' referenced before assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 565, in load
+    "condition": user.cond,
+UnboundLocalError: local variable 'user' referenced before assignment
+2023-10-28 17:47:51,692 PUT /sync route with id: {{ uniqueId }}
+2023-10-28 17:47:51,696 DB error: Unique user not found.
+2023-10-28 17:47:51,698 Exception on /sync/{{ uniqueId }} [PUT]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 592, in update
+    user.datastring = json.dumps(request.json)
+UnboundLocalError: local variable 'user' referenced before assignment
+[2023-10-28 17:49:14 -0700] [81579] [INFO] Handling signal: int
+[2023-10-28 17:49:14 -0700] [81581] [INFO] Worker exiting (pid: 81581)
+[2023-10-28 17:49:14 -0700] [81579] [INFO] Shutting down: Master
+[2023-10-28 17:50:15 -0700] [84365] [INFO] Starting gunicorn 20.0.4
+[2023-10-28 17:50:15 -0700] [84365] [INFO] Listening at: http://0.0.0.0:22362 (84365)
+[2023-10-28 17:50:15 -0700] [84365] [INFO] Using worker: gevent
+[2023-10-28 17:50:15 -0700] [84367] [INFO] Booting worker with pid: 84367
+[2023-10-28 17:50:15 -0700] [84367] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:50:15 -0700] [84367] [INFO] Worker exiting (pid: 84367)
+[2023-10-28 17:50:45 -0700] [84365] [CRITICAL] WORKER TIMEOUT (pid:84367)
+[2023-10-28 17:50:45 -0700] [85204] [INFO] Booting worker with pid: 85204
+[2023-10-28 17:50:45 -0700] [85204] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:50:45 -0700] [85204] [INFO] Worker exiting (pid: 85204)
+[2023-10-28 17:50:48 -0700] [84365] [INFO] Handling signal: int
+[2023-10-28 17:50:48 -0700] [84365] [INFO] Shutting down: Master
+[2023-10-28 17:50:50 -0700] [85244] [INFO] Starting gunicorn 20.0.4
+[2023-10-28 17:50:50 -0700] [85244] [INFO] Listening at: http://0.0.0.0:22362 (85244)
+[2023-10-28 17:50:50 -0700] [85244] [INFO] Using worker: gevent
+[2023-10-28 17:50:50 -0700] [85246] [INFO] Booting worker with pid: 85246
+[2023-10-28 17:50:50 -0700] [85246] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 10, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:50:50 -0700] [85246] [INFO] Worker exiting (pid: 85246)
+[2023-10-28 17:50:50 -0700] [85244] [INFO] Handling signal: int
+[2023-10-28 17:50:50 -0700] [85244] [INFO] Shutting down: Master
+[2023-10-28 17:51:50 -0700] [85740] [INFO] Starting gunicorn 20.0.4
+[2023-10-28 17:51:50 -0700] [85740] [INFO] Listening at: http://0.0.0.0:22362 (85740)
+[2023-10-28 17:51:50 -0700] [85740] [INFO] Using worker: gevent
+[2023-10-28 17:51:50 -0700] [85742] [INFO] Booting worker with pid: 85742
+[2023-10-28 17:51:50 -0700] [85742] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 13, in <module>
+    from jinja2 import TemplateNotFound
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/__init__.py", line 12, in <module>
+    from .environment import Environment
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/environment.py", line 25, in <module>
+    from .defaults import BLOCK_END_STRING
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/defaults.py", line 3, in <module>
+    from .filters import FILTERS as DEFAULT_FILTERS  # noqa: F401
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/filters.py", line 13, in <module>
+    from markupsafe import soft_unicode
+ImportError: cannot import name 'soft_unicode' from 'markupsafe' (/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/markupsafe/__init__.py)
+[2023-10-28 17:51:50 -0700] [85742] [INFO] Worker exiting (pid: 85742)
+[2023-10-28 17:51:56 -0700] [85740] [INFO] Handling signal: int
+[2023-10-28 17:51:56 -0700] [85740] [INFO] Shutting down: Master
+[2023-10-28 17:52:02 -0700] [85933] [INFO] Starting gunicorn 20.0.4
+[2023-10-28 17:52:02 -0700] [85933] [INFO] Listening at: http://0.0.0.0:22362 (85933)
+[2023-10-28 17:52:02 -0700] [85933] [INFO] Using worker: gevent
+[2023-10-28 17:52:02 -0700] [85935] [INFO] Booting worker with pid: 85935
+[2023-10-28 17:52:02 -0700] [85935] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 13, in <module>
+    from jinja2 import TemplateNotFound
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/__init__.py", line 12, in <module>
+    from .environment import Environment
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/environment.py", line 25, in <module>
+    from .defaults import BLOCK_END_STRING
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/defaults.py", line 3, in <module>
+    from .filters import FILTERS as DEFAULT_FILTERS  # noqa: F401
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/filters.py", line 13, in <module>
+    from markupsafe import soft_unicode
+ImportError: cannot import name 'soft_unicode' from 'markupsafe' (/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/markupsafe/__init__.py)
+[2023-10-28 17:52:02 -0700] [85935] [INFO] Worker exiting (pid: 85935)
+[2023-10-28 17:52:05 -0700] [85933] [INFO] Handling signal: int
+[2023-10-28 17:52:05 -0700] [85933] [INFO] Shutting down: Master
+[2023-10-28 17:52:06 -0700] [85968] [INFO] Starting gunicorn 20.0.4
+[2023-10-28 17:52:06 -0700] [85968] [INFO] Listening at: http://0.0.0.0:22362 (85968)
+[2023-10-28 17:52:06 -0700] [85968] [INFO] Using worker: gevent
+[2023-10-28 17:52:06 -0700] [85970] [INFO] Booting worker with pid: 85970
+[2023-10-28 17:52:06 -0700] [85970] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 13, in <module>
+    from jinja2 import TemplateNotFound
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/__init__.py", line 12, in <module>
+    from .environment import Environment
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/environment.py", line 25, in <module>
+    from .defaults import BLOCK_END_STRING
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/defaults.py", line 3, in <module>
+    from .filters import FILTERS as DEFAULT_FILTERS  # noqa: F401
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/jinja2/filters.py", line 13, in <module>
+    from markupsafe import soft_unicode
+ImportError: cannot import name 'soft_unicode' from 'markupsafe' (/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/markupsafe/__init__.py)
+[2023-10-28 17:52:06 -0700] [85970] [INFO] Worker exiting (pid: 85970)
+[2023-10-28 17:52:07 -0700] [85968] [INFO] Handling signal: int
+[2023-10-28 17:52:07 -0700] [85968] [INFO] Shutting down: Master
+[2023-10-28 17:54:36 -0700] [86712] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:54:36 -0700] [86712] [INFO] Listening at: http://0.0.0.0:22362 (86712)
+[2023-10-28 17:54:36 -0700] [86712] [INFO] Using worker: sync
+[2023-10-28 17:54:36 -0700] [86714] [INFO] Booting worker with pid: 86714
+[2023-10-28 17:54:36 -0700] [86714] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:54:36 -0700] [86714] [INFO] Worker exiting (pid: 86714)
+[2023-10-28 17:54:36 -0700] [86712] [INFO] Shutting down: Master
+[2023-10-28 17:54:36 -0700] [86712] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:55:47 -0700] [87130] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:55:47 -0700] [87130] [INFO] Listening at: http://0.0.0.0:22362 (87130)
+[2023-10-28 17:55:47 -0700] [87130] [INFO] Using worker: sync
+[2023-10-28 17:55:47 -0700] [87132] [INFO] Booting worker with pid: 87132
+[2023-10-28 17:55:47 -0700] [87132] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:55:47 -0700] [87132] [INFO] Worker exiting (pid: 87132)
+[2023-10-28 17:55:47 -0700] [87130] [INFO] Shutting down: Master
+[2023-10-28 17:55:47 -0700] [87130] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:57:00 -0700] [88180] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:57:00 -0700] [88180] [INFO] Listening at: http://0.0.0.0:22362 (88180)
+[2023-10-28 17:57:00 -0700] [88180] [INFO] Using worker: sync
+[2023-10-28 17:57:00 -0700] [88182] [INFO] Booting worker with pid: 88182
+[2023-10-28 17:57:00 -0700] [88182] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:57:00 -0700] [88182] [INFO] Worker exiting (pid: 88182)
+[2023-10-28 17:57:00 -0700] [88180] [INFO] Shutting down: Master
+[2023-10-28 17:57:00 -0700] [88180] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:57:03 -0700] [88205] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:57:03 -0700] [88205] [INFO] Listening at: http://0.0.0.0:22362 (88205)
+[2023-10-28 17:57:03 -0700] [88205] [INFO] Using worker: sync
+[2023-10-28 17:57:03 -0700] [88207] [INFO] Booting worker with pid: 88207
+[2023-10-28 17:57:03 -0700] [88207] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 15, in <module>
+    import requests
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/requests/__init__.py", line 95, in <module>
+    from urllib3.contrib import pyopenssl
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/OpenSSL/crypto.py", line 1573, in X509StoreFlags
+    CB_ISSUER_CHECK = _lib.X509_V_FLAG_CB_ISSUER_CHECK
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+[2023-10-28 17:57:03 -0700] [88207] [INFO] Worker exiting (pid: 88207)
+[2023-10-28 17:57:03 -0700] [88205] [INFO] Shutting down: Master
+[2023-10-28 17:57:03 -0700] [88205] [INFO] Reason: Worker failed to boot.
+[2023-10-28 17:58:49 -0700] [89605] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 17:58:49 -0700] [89605] [INFO] Listening at: http://0.0.0.0:22362 (89605)
+[2023-10-28 17:58:49 -0700] [89605] [INFO] Using worker: sync
+[2023-10-28 17:58:49 -0700] [89607] [INFO] Booting worker with pid: 89607
+2023-10-28 17:58:50,127 Secret key: 'SECRET'
+2023-10-28 17:58:50,131 /Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/psiturk_js/psiturk.js
+2023-10-28 17:59:02,395 GET /sync route with id: {{ uniqueId }}
+2023-10-28 17:59:02,402 DB error: Unique user not found.
+2023-10-28 17:59:02,403 Exception on /sync/{{ uniqueId }} [GET]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 562, in load
+    resp = json.loads(user.datastring)
+UnboundLocalError: local variable 'user' referenced before assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 565, in load
+    "condition": user.cond,
+UnboundLocalError: local variable 'user' referenced before assignment
+2023-10-28 17:59:02,639 PUT /sync route with id: {{ uniqueId }}
+2023-10-28 17:59:02,642 DB error: Unique user not found.
+2023-10-28 17:59:02,644 Exception on /sync/{{ uniqueId }} [PUT]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 592, in update
+    user.datastring = json.dumps(request.json)
+UnboundLocalError: local variable 'user' referenced before assignment
+2023-10-28 18:14:16,218 PUT /sync route with id: {{ uniqueId }}
+2023-10-28 18:14:16,236 DB error: Unique user not found.
+2023-10-28 18:14:16,239 Exception on /sync/{{ uniqueId }} [PUT]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 592, in update
+    user.datastring = json.dumps(request.json)
+UnboundLocalError: local variable 'user' referenced before assignment
+[2023-10-28 18:31:33 -0700] [89605] [INFO] Handling signal: int
+[2023-10-28 18:31:33 -0700] [89607] [INFO] Worker exiting (pid: 89607)
+[2023-10-28 18:31:33 -0700] [89605] [INFO] Shutting down: Master
+[2023-10-28 23:07:02 -0700] [46638] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 23:07:02 -0700] [46638] [INFO] Listening at: http://0.0.0.0:22362 (46638)
+[2023-10-28 23:07:02 -0700] [46638] [INFO] Using worker: sync
+[2023-10-28 23:07:02 -0700] [46640] [INFO] Booting worker with pid: 46640
+2023-10-28 23:07:02,576 Secret key: 'SECRET'
+2023-10-28 23:07:02,579 /Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/psiturk_js/psiturk.js
+[2023-10-28 23:07:21 -0700] [46638] [INFO] Handling signal: int
+[2023-10-28 23:07:21 -0700] [46640] [INFO] Worker exiting (pid: 46640)
+[2023-10-28 23:07:21 -0700] [46638] [INFO] Shutting down: Master
+[2023-10-28 23:08:20 -0700] [46986] [INFO] Starting gunicorn 19.9.0
+[2023-10-28 23:08:20 -0700] [46986] [INFO] Listening at: http://0.0.0.0:22362 (46986)
+[2023-10-28 23:08:20 -0700] [46986] [INFO] Using worker: sync
+[2023-10-28 23:08:20 -0700] [46988] [INFO] Booting worker with pid: 46988
+2023-10-28 23:08:20,778 Secret key: 'SECRET'
+2023-10-28 23:08:20,781 /Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/psiturk_js/psiturk.js
+2023-10-28 23:08:31,021 Accessing /exp: debughbG4o debugVop8m debugY2dch 
+2023-10-28 23:08:31,028 given Counter({(0, 0): 0, (1, 0): 0, (2, 0): 0, (3, 0): 0, (4, 0): 0, (5, 0): 0, (6, 0): 0, (7, 0): 0, (8, 0): 0, (9, 0): 0, (10, 0): 0, (11, 0): 0, (12, 0): 0, (13, 0): 0, (14, 0): 0, (15, 0): 0, (16, 0): 0, (17, 0): 0, (18, 0): 0, (19, 0): 0, (20, 0): 0, (21, 0): 0, (22, 0): 0, (23, 0): 0, (24, 0): 0, (25, 0): 0, (26, 0): 0, (27, 0): 0, (28, 0): 0, (29, 0): 0, (30, 0): 0, (31, 0): 0, (32, 0): 0, (33, 0): 0, (34, 0): 0, (35, 0): 0, (36, 0): 0, (37, 0): 0, (38, 0): 0, (39, 0): 0}) chose (24, 0)
+2023-10-28 23:08:31,180 GET /sync route with id: debugY2dch:debugVop8m
+2023-10-28 23:08:31,261 PUT /sync route with id: debugY2dch:debugVop8m
+2023-10-28 23:08:31,267 saved data for debugY2dch:debugVop8m (current trial: 0)
+2023-10-28 23:08:33,950 PUT /sync route with id: debugY2dch:debugVop8m
+2023-10-28 23:08:33,963 saved data for debugY2dch:debugVop8m (current trial: 1)
+2023-10-28 23:08:40,515 PUT /sync route with id: debugY2dch:debugVop8m
+2023-10-28 23:08:40,529 saved data for debugY2dch:debugVop8m (current trial: 1)
+2023-10-28 23:08:43,387 Accessing /exp: debughbG4o debugVop8m debugY2dch 
+2023-10-28 23:08:43,504 GET /sync route with id: debugY2dch:debugVop8m
+2023-10-28 23:08:43,553 PUT /sync route with id: debugY2dch:debugVop8m
+2023-10-28 23:08:43,559 saved data for debugY2dch:debugVop8m (current trial: 1)
+2023-10-28 23:08:45,682 PUT /sync route with id: debugY2dch:debugVop8m
+2023-10-28 23:08:45,693 saved data for debugY2dch:debugVop8m (current trial: 2)
+2023-10-28 23:08:51,253 PUT /sync route with id: debugY2dch:debugVop8m
+2023-10-28 23:08:51,260 saved data for debugY2dch:debugVop8m (current trial: 2)
+2023-10-28 23:08:52,827 PUT /sync route with id: debugY2dch:debugVop8m
+2023-10-28 23:08:52,838 saved data for debugY2dch:debugVop8m (current trial: 2)
+2023-10-28 23:09:04,000 GET /sync route with id: {{ uniqueId }}
+2023-10-28 23:09:04,003 DB error: Unique user not found.
+2023-10-28 23:09:04,004 Exception on /sync/{{ uniqueId }} [GET]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 562, in load
+    resp = json.loads(user.datastring)
+UnboundLocalError: local variable 'user' referenced before assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 565, in load
+    "condition": user.cond,
+UnboundLocalError: local variable 'user' referenced before assignment
+2023-10-28 23:09:04,372 PUT /sync route with id: {{ uniqueId }}
+2023-10-28 23:09:04,378 DB error: Unique user not found.
+2023-10-28 23:09:04,379 Exception on /sync/{{ uniqueId }} [PUT]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 592, in update
+    user.datastring = json.dumps(request.json)
+UnboundLocalError: local variable 'user' referenced before assignment
+2023-10-28 23:11:29,675 Completed experiment {{ uniqueId }}
+[2023-10-28 23:15:52 -0700] [46986] [INFO] Handling signal: int
+[2023-10-28 23:15:52 -0700] [46988] [INFO] Worker exiting (pid: 46988)
+[2023-10-28 23:15:52 -0700] [46986] [INFO] Shutting down: Master
