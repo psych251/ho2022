@@ -2137,3 +2137,15 @@ TypeError: The view function did not return a valid response. The function eithe
 [2023-10-29 16:07:43 -0700] [9179] [INFO] Worker exiting (pid: 9178)
 [2023-10-29 16:07:43 -0700] [9178] [INFO] Shutting down: Master
 [2023-10-29 16:07:43 -0700] [9178] [INFO] Worker exiting (pid: 9178)
+[2023-10-29 16:14:07 -0700] [17304] [INFO] Starting gunicorn 20.0.4
+[2023-10-29 16:14:07 -0700] [17304] [INFO] Listening at: http://0.0.0.0:22362 (17304)
+[2023-10-29 16:14:07 -0700] [17304] [INFO] Using worker: gevent
+[2023-10-29 16:14:07 -0700] [17305] [INFO] Booting worker with pid: 17305
+2023-10-29 16:14:08,226 Starting scheduler in 'paused' mode -- it will not run any tasks, but it can be used to create, modify, or delete tasks.
+2023-10-29 16:14:09,924 Scheduler started
+2023-10-29 16:14:10,337 /Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/psiturk/psiturk_js/psiturk.js
+[2023-10-29 16:14:11 -0700] [17304] [INFO] Handling signal: int
+[2023-10-29 16:14:11 -0700] [17305] [INFO] Worker exiting (pid: 17305)
+[2023-10-29 16:14:11 -0700] [17305] [INFO] Worker exiting (pid: 17304)
+[2023-10-29 16:14:11 -0700] [17304] [INFO] Shutting down: Master
+[2023-10-29 16:14:11 -0700] [17304] [INFO] Worker exiting (pid: 17304)
