@@ -2032,3 +2032,40 @@ TypeError: The view function did not return a valid response. The function eithe
 [2023-10-29 15:09:39 -0700] [45654] [INFO] Handling signal: int
 [2023-10-29 15:09:39 -0700] [45655] [INFO] Worker exiting (pid: 45655)
 [2023-10-29 15:09:39 -0700] [45654] [INFO] Shutting down: Master
+[2023-10-29 15:53:23 -0700] [94844] [INFO] Starting gunicorn 20.0.4
+[2023-10-29 15:53:23 -0700] [94844] [INFO] Listening at: http://0.0.0.0:22362 (94844)
+[2023-10-29 15:53:23 -0700] [94844] [INFO] Using worker: gevent
+[2023-10-29 15:53:23 -0700] [94845] [INFO] Booting worker with pid: 94845
+2023-10-29 15:53:23,681 Starting scheduler in 'paused' mode -- it will not run any tasks, but it can be used to create, modify, or delete tasks.
+2023-10-29 15:53:25,981 Scheduler started
+2023-10-29 15:53:27,002 /Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/psiturk/psiturk_js/psiturk.js
+2023-10-29 15:53:37,942 GET /sync route with id: {{ uniqueId }}
+2023-10-29 15:53:38,120 DB error: Unique user not found.
+2023-10-29 15:53:38,123 Exception on /sync/{{ uniqueId }} [GET]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/flask/app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2023-10-29 15:53:38,370 PUT /sync route with id: {{ uniqueId }}
+2023-10-29 15:53:38,540 DB error: Unique user not found.
+[2023-10-29 15:54:13 -0700] [94844] [INFO] Handling signal: int
+[2023-10-29 15:54:14 -0700] [94845] [INFO] Worker exiting (pid: 94845)
+[2023-10-29 15:54:14 -0700] [94844] [INFO] Shutting down: Master
+[2023-10-29 15:55:21 -0700] [96776] [INFO] Starting gunicorn 20.0.4
+[2023-10-29 15:55:21 -0700] [96776] [INFO] Listening at: http://0.0.0.0:22362 (96776)
+[2023-10-29 15:55:21 -0700] [96776] [INFO] Using worker: gevent
+[2023-10-29 15:55:21 -0700] [96777] [INFO] Booting worker with pid: 96777
+2023-10-29 15:55:22,069 Starting scheduler in 'paused' mode -- it will not run any tasks, but it can be used to create, modify, or delete tasks.
+2023-10-29 15:55:23,818 Scheduler started
+2023-10-29 15:55:24,235 /Users/justyang/miniconda3/envs/psych251_debug/lib/python3.9/site-packages/psiturk/psiturk_js/psiturk.js
+[2023-10-29 15:55:31 -0700] [96776] [INFO] Handling signal: int
+[2023-10-29 15:55:31 -0700] [96777] [INFO] Worker exiting (pid: 96777)
+[2023-10-29 15:55:31 -0700] [96777] [INFO] Worker exiting (pid: 96776)
+[2023-10-29 15:55:31 -0700] [96776] [INFO] Shutting down: Master
+[2023-10-29 15:55:31 -0700] [96776] [INFO] Worker exiting (pid: 96776)
