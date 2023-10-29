@@ -1877,3 +1877,73 @@ UnboundLocalError: local variable 'user' referenced before assignment
 [2023-10-28 23:15:52 -0700] [46986] [INFO] Handling signal: int
 [2023-10-28 23:15:52 -0700] [46988] [INFO] Worker exiting (pid: 46988)
 [2023-10-28 23:15:52 -0700] [46986] [INFO] Shutting down: Master
+[2023-10-29 14:10:51 -0700] [92711] [INFO] Starting gunicorn 19.9.0
+[2023-10-29 14:10:51 -0700] [92711] [INFO] Listening at: http://0.0.0.0:22362 (92711)
+[2023-10-29 14:10:51 -0700] [92711] [INFO] Using worker: sync
+[2023-10-29 14:10:51 -0700] [92713] [INFO] Booting worker with pid: 92713
+2023-10-29 14:10:51,637 Secret key: 'SECRET'
+2023-10-29 14:10:51,643 /Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/psiturk_js/psiturk.js
+[2023-10-29 14:10:55 -0700] [92711] [INFO] Handling signal: int
+[2023-10-29 14:10:56 -0700] [92713] [INFO] Worker exiting (pid: 92713)
+[2023-10-29 14:10:56 -0700] [92711] [INFO] Shutting down: Master
+[2023-10-29 14:18:27 -0700] [3074] [INFO] Starting gunicorn 19.9.0
+[2023-10-29 14:18:27 -0700] [3074] [INFO] Listening at: http://0.0.0.0:22362 (3074)
+[2023-10-29 14:18:27 -0700] [3074] [INFO] Using worker: sync
+[2023-10-29 14:18:27 -0700] [3076] [INFO] Booting worker with pid: 3076
+2023-10-29 14:18:27,396 Secret key: 'SECRET'
+2023-10-29 14:18:27,401 /Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/psiturk_js/psiturk.js
+2023-10-29 14:18:56,655 GET /sync route with id: {{ uniqueId }}
+2023-10-29 14:18:56,665 DB error: Unique user not found.
+2023-10-29 14:18:56,666 Exception on /sync/{{ uniqueId }} [GET]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 562, in load
+    resp = json.loads(user.datastring)
+UnboundLocalError: local variable 'user' referenced before assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 565, in load
+    "condition": user.cond,
+UnboundLocalError: local variable 'user' referenced before assignment
+2023-10-29 14:18:59,278 PUT /sync route with id: {{ uniqueId }}
+2023-10-29 14:18:59,282 DB error: Unique user not found.
+2023-10-29 14:18:59,283 Exception on /sync/{{ uniqueId }} [PUT]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 592, in update
+    user.datastring = json.dumps(request.json)
+UnboundLocalError: local variable 'user' referenced before assignment
+2023-10-29 14:19:56,787 PUT /sync route with id: {{ uniqueId }}
+2023-10-29 14:19:56,791 DB error: Unique user not found.
+2023-10-29 14:19:56,796 Exception on /sync/{{ uniqueId }} [PUT]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.8/site-packages/psiturk/experiment.py", line 592, in update
+    user.datastring = json.dumps(request.json)
+UnboundLocalError: local variable 'user' referenced before assignment
+[2023-10-29 14:20:09 -0700] [3074] [INFO] Handling signal: int
+[2023-10-29 14:20:10 -0700] [3076] [INFO] Worker exiting (pid: 3076)
+[2023-10-29 14:20:10 -0700] [3074] [INFO] Shutting down: Master

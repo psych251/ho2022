@@ -49,5 +49,5 @@ ad_location = MY_AD_LOCATION
 #
 #   https://<host>:<port>/ad
 
-use_psiturk_ad_server = false
-ad_location = https://bodacious_app_name.herokuapp.com/pub
+# use_psiturk_ad_server = false
+# ad_location = https://bodacious_app_name.herokuapp.com/pub
