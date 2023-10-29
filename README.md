@@ -11,3 +11,12 @@ Replication project of initial experiment from Ho, M. K., Abel, D., Correa, C. G
 RPubs link to report: [https://rpubs.com/justintheyang/wu2021replication](https://rpubs.com/justintheyang/ho2022_replication) <br>
 Link to original paper: [Ho et al. - 2022 - People construct simplified mental representations.pdf](https://github.com/psych251/ho2022/blob/main/original_paper/Ho%20et%20al.%20-%202022%20-%20People%20construct%20simplified%20mental%20representations.pdf)
 
+
+## Experiment
+You can run the study as a psiturk experiment by running:
+```
+$ cd experiment.psiturkapp
+$ make dev
+```
+
+Doing so will start the server. The experiment can then be accessed locally [here](http://localhost:22362/testexperiment?CONFIG_FILE=exp1.0-config.json.zip).
