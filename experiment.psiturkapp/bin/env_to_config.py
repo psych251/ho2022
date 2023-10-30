@@ -25,6 +25,12 @@ def copy_env_to_config():
             with open('config.txt', 'w') as out:
                 c.write(out)
             print("Changes written to config.txt successfully!")
+
+            # Read and print the contents immediately
+            with open('config.txt', 'r') as f:
+                contents = f.read()
+            print("Contents of config.txt after writing:")
+            print(contents)
         else:
             print("No changes detected for config.txt")
 
