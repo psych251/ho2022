@@ -3,23 +3,21 @@ experiment_code_version = development
 num_conds = 40
 num_counters = 1
 
-[Database Parameters]
-database_url = postgres://jjcixeqyhevmbl:1e35516b7b8e2d736e647b81490f8cf41e7fd1ef7e6ac1db70960e7e32c5faca@ec2-35-169-9-79.compute-1.amazonaws.com:5432/dbnng3f3vjb7g5
-table_name = out_data
-
 [Server Parameters]
 host = 0.0.0.0
 port = 22362
-cutoff_time = 30
 logfile = server.log
-loglevel = 1
+threads = 2
+cutoff_time = 30
+loglevel = 2
 debug = false
-login_username = justin_experiment
+login_username = justin_experiment # only needs to be set if enable_dashboard = true
 login_pw = ho2022replicationtracking
-threads = 1
 secret_key = '36cae526-06ab-4c8d-8aad-b244d0a7edf0'
-adserver_revproxy_host = ho2022replication-1d86faffa1c1.herokuapp.com
-#recaptcha_key = SECRET
+
+[Database Parameters]
+database_url = sqlite:///participants.db
+table_name = participants
 
 # --- everything below this line is only relevant if you are using MTurk (via psiturk) ---
 
@@ -42,5 +40,10 @@ allow_repeats = false
 [Shell Parameters]
 launch_in_sandbox_mode = true
 bonus_message = "Thanks for participating!"
+
+# If you are not using the psiturk ad server, set `use_psiturk_ad_server` to `false` and point `ad_location` to your proxy server <host> and <port>. Format the ad_location like this:
+#
+#   https://<host>:<port>/ad
+
 use_psiturk_ad_server = false
-ad_location = https:///pub
+ad_location = https://bodacious_app_name.herokuapp.com/pub
