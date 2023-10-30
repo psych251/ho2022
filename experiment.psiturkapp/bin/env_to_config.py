@@ -3,11 +3,6 @@ import os
 
 def copy_env_to_config():
     try:
-        # Print debugging information
-        print("Current working directory:", os.getcwd())
-        print("DATABASE_URL from environment:", os.environ.get('DATABASE_URL'))
-        print("PORT from environment:", os.environ.get('PORT'))
-
         c = configparser.ConfigParser()
         c.read('config.txt')
 
@@ -26,11 +21,6 @@ def copy_env_to_config():
                 c.write(out)
             print("Changes written to config.txt successfully!")
 
-            # Read and print the contents immediately
-            with open('config.txt', 'r') as f:
-                contents = f.read()
-            print("Contents of config.txt after writing:")
-            print(contents)
         else:
             print("No changes detected for config.txt")
 
