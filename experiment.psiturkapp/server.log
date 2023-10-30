@@ -2149,3 +2149,169 @@ TypeError: The view function did not return a valid response. The function eithe
 [2023-10-29 16:14:11 -0700] [17305] [INFO] Worker exiting (pid: 17304)
 [2023-10-29 16:14:11 -0700] [17304] [INFO] Shutting down: Master
 [2023-10-29 16:14:11 -0700] [17304] [INFO] Worker exiting (pid: 17304)
+2023-10-29 21:20:37,762 Scheduler started
+2023-10-29 21:20:37,762 Scheduler started
+[2023-10-29 21:20:37 -0700] [26542] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: table participants already exists
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/psiturk/experiment_server.py", line 68, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/psiturk/experiment.py", line 136, in <module>
+    init_db()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/psiturk/db.py", line 33, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/sql/schema.py", line 4664, in create_all
+    bind._run_visitor(
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2095, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1656, in _run_visitor
+    visitorcallable(self.dialect, self, **kwargs).traverse_single(element)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/sql/visitors.py", line 145, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/sql/ddl.py", line 783, in visit_metadata
+    self.traverse_single(
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/sql/visitors.py", line 145, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/sql/ddl.py", line 827, in visit_table
+    self.connection.execute(
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/sql/ddl.py", line 72, in _execute_on_connection
+    return connection._execute_ddl(self, multiparams, params)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1068, in _execute_ddl
+    ret = self._execute_context(
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table participants already exists
+[SQL: 
+CREATE TABLE participants (
+	uniqueid VARCHAR(128) NOT NULL, 
+	assignmentid VARCHAR(128) NOT NULL, 
+	workerid VARCHAR(128) NOT NULL, 
+	hitid VARCHAR(128) NOT NULL, 
+	ipaddress VARCHAR(128), 
+	browser VARCHAR(128), 
+	platform VARCHAR(128), 
+	language VARCHAR(128), 
+	cond INTEGER, 
+	counterbalance INTEGER, 
+	codeversion VARCHAR(128), 
+	beginhit DATETIME, 
+	beginexp DATETIME, 
+	endhit DATETIME, 
+	bonus FLOAT, 
+	status INTEGER, 
+	mode VARCHAR(128), 
+	datastring TEXT(4294967295), 
+	PRIMARY KEY (uniqueid)
+)
+
+]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2023-10-29 21:20:46,621 DB error: Unique user not found.
+[2023-10-29 21:20:46 -0700] [26541] [ERROR] Error handling request /sync/%7B%7B%20uniqueId%20%7D%7D
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base_async.py", line 55, in handle
+    self.handle_request(listener_name, req, client, addr)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/ggevent.py", line 143, in handle_request
+    super().handle_request(listener_name, req, sock, addr)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base_async.py", line 106, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2023-10-29 21:20:47,444 DB error: Unique user not found.
+[2023-10-29 21:21:07 -0700] [26540] [CRITICAL] WORKER TIMEOUT (pid:26542)
+2023-10-29 21:21:08,006 Scheduler started
+2023-10-29 21:22:18,403 DB error: Unique user not found.
+[2023-10-29 21:22:18 -0700] [26728] [ERROR] Error handling request /sync/%7B%7B%20uniqueId%20%7D%7D
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base_async.py", line 55, in handle
+    self.handle_request(listener_name, req, client, addr)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/ggevent.py", line 143, in handle_request
+    super().handle_request(listener_name, req, sock, addr)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base_async.py", line 106, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2023-10-29 21:22:33,823 DB error: Unique user not found.
+2023-10-29 22:03:34,942 Scheduler started
+2023-10-29 22:03:34,942 Scheduler started
+2023-10-29 22:03:53,525 DB error: Unique user not found.
+2023-10-29 22:03:53,526 Exception on /sync/{{ uniqueId }} [GET]
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2023-10-29 22:03:53,657 DB error: Unique user not found.
