@@ -9,7 +9,7 @@ port = 22362
 logfile = server.log
 threads = 2
 cutoff_time = 30
-loglevel = 2
+loglevel = 1
 debug = false
 login_username = justin_experiment # only needs to be set if enable_dashboard = true
 login_pw = ho2022replicationtracking
