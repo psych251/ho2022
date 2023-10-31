@@ -2,8 +2,8 @@ import {makeid, FailedAttentionCheckException, errors, isNumber} from "./exputil
 
 //Global variables
 window.timeline;
-window.psiturk = new PsiTurk(uniqueId, adServerLoc, mode);
 window.searchParams = new URLSearchParams(location.search);
+window.psiturk = new PsiTurk(searchParams,get('uniqueId'), adServerLoc, mode);
 window.globalExpStore = {};
 window.globalExpStore.sessionId = makeid(10);
 window.globalExpStore.bonusDollars = 0;
@@ -72,7 +72,7 @@ async function runExperiment(display_element) {
     }
 
     console.log("Experiment Parameters:")
-    console.log(config['params'])
+    console.log(config.params)
 
     /* Set up timeline and global parameters*/
     let page = parseInt(searchParams.get('page') || 0);

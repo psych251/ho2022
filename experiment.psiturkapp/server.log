@@ -2315,3 +2315,141 @@ Traceback (most recent call last):
     raise TypeError(
 TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
 2023-10-29 22:03:53,657 DB error: Unique user not found.
+[2023-10-30 16:46:56 -0700] [88771] [INFO] Starting gunicorn 20.0.4
+[2023-10-30 16:46:56 -0700] [88771] [INFO] Listening at: http://0.0.0.0:22362 (88771)
+[2023-10-30 16:46:56 -0700] [88771] [INFO] Using worker: gevent
+[2023-10-30 16:46:56 -0700] [88772] [INFO] Booting worker with pid: 88772
+[2023-10-30 16:46:56 -0700] [88774] [INFO] Booting worker with pid: 88774
+2023-10-30 16:46:56,828 Starting scheduler in 'paused' mode -- it will not run any tasks, but it can be used to create, modify, or delete tasks.
+2023-10-30 16:46:56,828 Starting scheduler in 'paused' mode -- it will not run any tasks, but it can be used to create, modify, or delete tasks.
+2023-10-30 16:46:56,832 Scheduler started
+2023-10-30 16:46:56,832 Scheduler started
+2023-10-30 16:46:56,833 /Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/psiturk/psiturk_js/psiturk.js
+2023-10-30 16:46:56,833 /Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/psiturk/psiturk_js/psiturk.js
+2023-10-30 16:47:15,820 GET /sync route with id: {{ uniqueId }}
+2023-10-30 16:47:15,823 DB error: Unique user not found.
+[2023-10-30 16:47:15 -0700] [88774] [ERROR] Error handling request /sync/%7B%7B%20uniqueId%20%7D%7D
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base_async.py", line 55, in handle
+    self.handle_request(listener_name, req, client, addr)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/ggevent.py", line 143, in handle_request
+    super().handle_request(listener_name, req, sock, addr)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base_async.py", line 106, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2023-10-30 16:47:15,946 PUT /sync route with id: {{ uniqueId }}
+2023-10-30 16:47:15,956 DB error: Unique user not found.
+2023-10-30 16:48:23,753 PUT /sync route with id: {{ uniqueId }}
+2023-10-30 16:48:23,760 DB error: Unique user not found.
+2023-10-30 16:48:24,675 GET /sync route with id: {{ uniqueId }}
+2023-10-30 16:48:24,676 DB error: Unique user not found.
+[2023-10-30 16:48:24 -0700] [88772] [ERROR] Error handling request /sync/%7B%7B%20uniqueId%20%7D%7D
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base_async.py", line 55, in handle
+    self.handle_request(listener_name, req, client, addr)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/ggevent.py", line 143, in handle_request
+    super().handle_request(listener_name, req, sock, addr)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base_async.py", line 106, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2023-10-30 16:48:24,877 PUT /sync route with id: {{ uniqueId }}
+2023-10-30 16:48:24,880 DB error: Unique user not found.
+2023-10-30 16:53:33,029 PUT /sync route with id: {{ uniqueId }}
+2023-10-30 16:53:33,033 DB error: Unique user not found.
+2023-10-30 16:53:33,992 GET /sync route with id: {{ uniqueId }}
+2023-10-30 16:53:33,993 DB error: Unique user not found.
+[2023-10-30 16:53:33 -0700] [88772] [ERROR] Error handling request /sync/%7B%7B%20uniqueId%20%7D%7D
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base_async.py", line 55, in handle
+    self.handle_request(listener_name, req, client, addr)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/ggevent.py", line 143, in handle_request
+    super().handle_request(listener_name, req, sock, addr)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base_async.py", line 106, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2023-10-30 16:53:34,184 PUT /sync route with id: {{ uniqueId }}
+2023-10-30 16:53:34,189 DB error: Unique user not found.
+2023-10-30 17:12:15,152 PUT /sync route with id: {{ uniqueId }}
+2023-10-30 17:12:15,161 DB error: Unique user not found.
+2023-10-30 17:12:15,938 GET /sync route with id: {{ uniqueId }}
+2023-10-30 17:12:15,942 DB error: Unique user not found.
+[2023-10-30 17:12:15 -0700] [88772] [ERROR] Error handling request /sync/%7B%7B%20uniqueId%20%7D%7D
+Traceback (most recent call last):
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base_async.py", line 55, in handle
+    self.handle_request(listener_name, req, client, addr)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/ggevent.py", line 143, in handle_request
+    super().handle_request(listener_name, req, sock, addr)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/gunicorn/workers/base_async.py", line 106, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/justyang/miniconda3/envs/psych251_experiment/lib/python3.9/site-packages/flask/app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2023-10-30 17:12:16,144 PUT /sync route with id: {{ uniqueId }}
+2023-10-30 17:12:16,147 DB error: Unique user not found.
+2023-10-30 17:14:21,680 Completed experiment {{ uniqueId }}
+[2023-10-30 17:34:23 -0700] [88771] [INFO] Handling signal: int
+[2023-10-30 17:34:23 -0700] [88774] [INFO] Worker exiting (pid: 88774)
+[2023-10-30 17:34:23 -0700] [88772] [INFO] Worker exiting (pid: 88772)
+[2023-10-30 17:34:23 -0700] [88771] [INFO] Shutting down: Master
