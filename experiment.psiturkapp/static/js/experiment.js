@@ -3,7 +3,7 @@ import {makeid, FailedAttentionCheckException, errors, isNumber} from "./exputil
 //Global variables
 window.timeline;
 window.searchParams = new URLSearchParams(location.search);
-window.psiturk = new PsiTurk(searchParams,get('uniqueId'), adServerLoc, mode);
+window.psiturk = new PsiTurk(searchParams.get('uniqueId'), adServerLoc, mode);
 window.globalExpStore = {};
 window.globalExpStore.sessionId = makeid(10);
 window.globalExpStore.bonusDollars = 0;
