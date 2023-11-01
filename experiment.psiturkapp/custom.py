@@ -1,5 +1,6 @@
 # this file imports custom routes into the experiment server
 import os
+from random import choice
 from flask import Blueprint, render_template, request, jsonify, Response, abort, current_app
 from jinja2 import TemplateNotFound
 from functools import wraps
