@@ -7,7 +7,8 @@ window.psiturk = new PsiTurk(uniqueId, adServerLoc, mode);
 window.globalExpStore = {};
 window.globalExpStore.sessionId = makeid(10);
 window.globalExpStore.bonusDollars = 0;
-window.globalExpStore.contactEmail = 'mho@princeton.edu' //default
+window.globalExpStore.contactEmail = 'justin.yang@stanford.edu' //default
+window.globalExpStore.recruitment_platform = 'prolific' //default
 window.onload = main
 
 async function main () {
@@ -159,8 +160,8 @@ async function endSuccessfully(display_element) {
                 <p>
                 Your completion code is <b>3AF5D4D6</b>
                 Click this link to submit<br>
-                <a href=https://app.prolific.co/submissions/complete?cc=3AF5D4D6>
-                    https://app.prolific.co/submissions/complete?cc=3AF5D4D6
+                <a href=https://app.prolific.com/submissions/complete?cc=C15DETPZ>
+                    https://app.prolific.com/submissions/complete?cc=C15DETPZ
                 </a>
                 <p>
                 If you have problems submitting, please contact

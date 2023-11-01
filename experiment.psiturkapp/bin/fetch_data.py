@@ -1,8 +1,8 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 
 import os
 import logging
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import pandas as pd
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 import ast
@@ -38,25 +38,29 @@ class Labeler(object):
     __call__ = label
 
 def add_auth(url, username, password):
-    """Add HTTP authencation for opening urls with urllib2.
+    """Add HTTP authentication for opening urls with urllib."""
 
-    Based on http://www.voidspace.org.uk/python/articles/authentication.shtml
-    """
-    passman = urllib2.HTTPPasswordMgrWithDefaultRealm()
+    password_manager = urllib.request.HTTPPasswordMgrWithDefaultRealm()
+    password_manager.add_password(None, url, username, password)
+    auth_handler = urllib.request.HTTPBasicAuthHandler(password_manager)
+    opener = urllib.request.build_opener(auth_handler)
+    urllib.request.install_opener(opener)
 
-    # because we have put None at the start it will always use this
-    # username/password combination for urls for which `theurl` is a super-url
-    passman.add_password(None, url, username, password)
+    # passman = urllib2.HTTPPasswordMgrWithDefaultRealm()
 
-    # create the AuthHandler
-    authhandler = urllib2.HTTPBasicAuthHandler(passman)
+    # # because we have put None at the start it will always use this
+    # # username/password combination for urls for which `theurl` is a super-url
+    # passman.add_password(None, url, username, password)
 
-    # All calls to urllib2.urlopen will now use our handler. Make sure not to
-    # include the protocol in with the URL, or HTTPPasswordMgrWithDefaultRealm
-    # will be very confused.  You must (of course) use it when fetching the
-    # page though.
-    opener = urllib2.build_opener(authhandler)
-    urllib2.install_opener(opener)
+    # # create the AuthHandler
+    # authhandler = urllib2.HTTPBasicAuthHandler(passman)
+
+    # # All calls to urllib2.urlopen will now use our handler. Make sure not to
+    # # include the protocol in with the URL, or HTTPPasswordMgrWithDefaultRealm
+    # # will be very confused.  You must (of course) use it when fetching the
+    # # page though.
+    # opener = urllib2.build_opener(authhandler)
+    # urllib2.install_opener(opener)
 
 
 def fetch(site_root, filename, version, force=True):
@@ -74,16 +78,16 @@ def fetch(site_root, filename, version, force=True):
 
     # download the data
     try:
-        handler = urllib2.urlopen(url)
-    except IOError as err:
-        if getattr(err, 'code', None) == 401:
+        handler = urllib.request.urlopen(url)
+        data = handler.read().decode('utf-8')  # Decode bytes to string for Python 3
+    except urllib.error.HTTPError as err:  # Update error handling for urllib in Python 3
+        if err.code == 401:
             logging.error("Server authentication failed.")
-            raise err
+            raise
         else:
             raise
     else:
-        data = handler.read()
-        logging.info("Fetched succesfully: %s", url)
+        logging.info("Fetched successfully: %s", url)
 
     # write out the data file
     if not os.path.exists(os.path.dirname(dest)):
@@ -187,10 +191,10 @@ if __name__ == "__main__":
               "parameter in the psiTurk config.txt file that was used when the "
               "data was collected."))
 
-    url = "https://ball-exp.herokuapp.com/data"
+    url = "https://ho2022replication-fd154e08e669.herokuapp.com/data"
     if url == "https://ball-exp.herokuapp.com/data":
         print('Set the URL in this file before usage. Then delete this ')
         exit(1)
 
     args = parser.parse_args()
-    main(args.version, url, 'user', 'pw')  # from config.txt
+    main(args.version, url, 'justin_experiment # only needs to be set if enable_dashboard = true', 'ho2022replicationtracking')

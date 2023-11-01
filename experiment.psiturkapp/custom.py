@@ -51,6 +51,15 @@ def get_participants(codeversion):
         .all()
     )
 
+from flask import redirect
+import uuid
+@custom_code.route('/generate_link')
+def generate_link():
+    base_url = "https://ho2022replication-fd154e08e669.herokuapp.com/exp?CONFIG_FILE=exp1.0-config.json.zip&mode=live"
+    assignmentId = uuid.uuid4().hex
+    workerId = uuid.uuid4().hex
+    return redirect(f"{base_url}&assignmentId={assignmentId}&hitId=6541a4e59d5c88f88d64bd42&workerId={workerId}", code=302)
+
 @custom_code.route('/testexperiment')
 def testexperiment():
     data = {
