@@ -1,5 +1,5 @@
 [Task Parameters]
-experiment_code_version = development
+experiment_code_version = pilot_a
 num_conds = 40
 num_counters = 1
 
