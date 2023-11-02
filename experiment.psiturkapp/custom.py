@@ -5,6 +5,7 @@ from flask import Blueprint, render_template, request, jsonify, Response, abort,
 from jinja2 import TemplateNotFound
 from functools import wraps
 from sqlalchemy import or_
+from sqlalchemy.orm import undefer
 
 from psiturk.psiturk_config import PsiturkConfig
 from psiturk.experiment_errors import ExperimentError, InvalidUsage
@@ -46,6 +47,7 @@ def get_participants(codeversion):
     return (
         Participant
         .query
+        .options(undefer('datastring'))
         .filter(Participant.codeversion == codeversion)
         # .filter(Participant.status >= 3)  # only take completed
         .all()
