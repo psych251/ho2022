@@ -22,7 +22,9 @@ $ make dev
 Doing so will start the server. The experiment can then be accessed locally [here](http://localhost:22362/testexperiment?CONFIG_FILE=exp1.0-config.json.zip).
 
 
-To process & get data: 
-1. (jupyter_notebook) justyang:ho2022/ (main✗) $ `python experiments/exp1/pull_results.py pull_data_from_server --EXP_NAME=pilot_a --RAWRESULTS_DIR=data/pilot_a --CREDENTIALS_FILE=.creds.json`
-2. (jupyter_notebook) justyang:ho2022/ (main✗) $ `python experiments/exp1/pull_results.py parse_raw_datafiles --BASEGRIDS_FILENAME=experiments/mazes/mazes_0-11.json --RAWRESULTS_DIR=data/pilot_a --EXP_CONFIG_FILE=experiment.psiturkapp/static/config/exp1.0-config.json --EXP_RESULTS_DIR=experiments/exp1/data/pilot_a/`
-3. (jupyter_notebook) justyang:ho2022/ (main✗) $ `python experiments/exp1/prep_results.py do_exclusions --BASEGRIDS_FILENAME=experiments/mazes/mazes_0-11.json --RESULTSDIR=experiments/exp1/data/pilot_a/`
+To process & get data, run the following sequence of commands in the project directory (`ho2022/`) using the `jupyter_notebook` conda environment: 
+
+on `(jupyter_notebook) justyang:ho2022/ (main✗) $`: 
+1. `python experiments/exp1/pull_results.py pull_data_from_server --EXP_NAME=pilot_a --RAWRESULTS_DIR=data/pilot_a --CREDENTIALS_FILE=.creds.json`
+2. `python experiments/exp1/pull_results.py parse_raw_datafiles --BASEGRIDS_FILENAME=experiments/mazes/mazes_0-11.json --RAWRESULTS_DIR=data/pilot_a --EXP_CONFIG_FILE=experiment.psiturkapp/static/config/exp1.0-config.json --EXP_RESULTS_DIR=experiments/exp1/data/pilot_a/`
+3. `python experiments/exp1/prep_results.py do_exclusions --BASEGRIDS_FILENAME=experiments/mazes/mazes_0-11.json --RESULTSDIR=experiments/exp1/data/pilot_a/`
