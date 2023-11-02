@@ -20,6 +20,7 @@ Link to original paper: [Ho et al. - 2022 - People construct simplified mental r
 - `writeup`: contains the replication report
 
 ## Experiment
+### Local server setup
 You can run the study as a psiturk experiment by running:
 ```
 $ cd experiment.psiturkapp
@@ -28,11 +29,7 @@ $ make dev
 
 Doing so will start the server. The experiment can then be accessed locally [here](http://localhost:22362/testexperiment?CONFIG_FILE=exp1.0-config.json.zip).
 
-To run the experiment live on Prolific (hosted on Heroku), you want to use the following URL parameters: 
-```
-https://project_name.herokuapp.com/exp?CONFIG_FILE=exp1.0-config.json.zip&assignmentId={{%SESSION_ID%}}&hitId={{%STUDY_ID%}}&workerId={{%PROLIFIC_PID%}}&mode=live
-```
-
+### Heroku server setup
 The Heroku setup consists of the following steps: 
 ```
 $ heroku create ho2022replication --buildpack heroku/python
@@ -46,6 +43,12 @@ The Postgres database url can be found by querying:
 ```
 heroku config
 ```
+
+After the server is set up (check the server url with `heroku domains`), you may host the experiment on Prolific using the following URL parameters: 
+``` 
+https://project_name.herokuapp.com/exp?CONFIG_FILE=exp1.0-config.json.zip&assignmentId={{%SESSION_ID%}}&hitId={{%STUDY_ID%}}&workerId={{%PROLIFIC_PID%}}&mode=live
+```
+
 
 ## Analyses
 
