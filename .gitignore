@@ -3,6 +3,7 @@ vgc_project.egg-info/
 .creds.json
 */.ipynb_checkpoints*
 */__pycache*
+*/*/__pycache*
 */_analysiscache*
 analyses/dvgc-gridsearch/results/gridsearch.json
 
