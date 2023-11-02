@@ -1,3 +1,7 @@
+build/
+vgc_project.egg-info/
+.creds.json
+
 # History files
 .Rhistory
 .Rapp.history
