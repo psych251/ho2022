@@ -1,6 +1,10 @@
 build/
 vgc_project.egg-info/
 .creds.json
+*/.ipynb_checkpoints*
+*/__pycache*
+*/_analysiscache*
+analyses/dvgc-gridsearch/results/gridsearch.json
 
 # History files
 .Rhistory
