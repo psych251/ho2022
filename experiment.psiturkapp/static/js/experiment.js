@@ -173,8 +173,8 @@ async function endSuccessfully(display_element) {
                 <p>
                 Your completion code is <b>3AF5D4D6</b>
                 Click this link to submit<br>
-                <a href=https://app.prolific.com/submissions/complete?cc=C15DETPZ>
-                    https://app.prolific.com/submissions/complete?cc=C15DETPZ
+                <a href=https://app.prolific.com/submissions/complete?cc=C16BVY32>
+                    https://app.prolific.com/submissions/complete?cc=C16BVY32
                 </a>
                 <p>
                 If you have problems submitting, please contact
