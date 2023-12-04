@@ -83,6 +83,19 @@ async function runExperiment(display_element) {
     window.globalExpStore.condition = condition;
     window.globalExpStore.page = page;
 
+    // Define the consent form as a JSON object
+    let consentForm = {
+        "continue_wait_time": 5000, // Adjust as needed
+        "instructions": "<h1>Consent Form</h1>\n" +
+                        "<p>By answering the following questions, you are participating in a study being performed by cognitive scientists in the Stanford Department of Psychology. If you have questions about this research, please contact us at stanfordpsych251@gmail.com. You must be at least 18 years old to participate.</p>\n" +
+                        "<p>Your participation in this research is voluntary. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you.</p>",
+        "timing_post_trial": 1000, // Adjust as needed
+        "type": "CustomInstructions"
+    };
+
+    // Prepend the consent form to the timeline
+    window.timeline.unshift(consentForm);
+
     psiturk.preloadImages(config.preloadImages || [])
 
     /* Miscellaneous things */
