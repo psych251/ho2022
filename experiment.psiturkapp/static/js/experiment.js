@@ -171,7 +171,7 @@ async function endSuccessfully(display_element) {
                 <h1>Study complete</h1>
 
                 <p>
-                Your completion code is <b>3AF5D4D6</b>
+                Your completion code is <b>C16BVY32</b>
                 Click this link to submit<br>
                 <a href=https://app.prolific.com/submissions/complete?cc=C16BVY32>
                     https://app.prolific.com/submissions/complete?cc=C16BVY32

@@ -1,3 +1,4 @@
+import os
 import urllib.request
 import csv, json
 import fire
@@ -101,14 +102,14 @@ def parse_raw_datafiles(
             participantdata[wid].update(record)
         elif record.get('trial_type') in ["survey-multi-choice", "survey-text"]:
             participantdata[wid] = participantdata.get(wid, {})
-            trialidx = record['trial_index'] #- 1 #first is fullscreen
+            trialidx = record['trial_index'] - 1 #first is fullscreen
             trialparams = cond0[trialidx]['questions']
             record2 = {trialparams[int(qi[1:])]['name']: resp
                        for qi, resp in json.loads(record['responses']).items()}
             participantdata[wid].update(record2)
         elif record.get('trial_type') in ["survey-likert"]:
             participantdata[wid] = participantdata.get(wid, {})
-            trialidx = record['trial_index']# - 1 #first is fullscreen
+            trialidx = record['trial_index'] - 1 #first is fullscreen
             trialparams = cond0[trialidx]['questions']
             record2 = {trialparams[int(qi[1:])]['name']: trialparams[int(qi[1:])]['labels'][resp]
                        for qi, resp in json.loads(record['responses']).items()}
@@ -180,6 +181,10 @@ def parse_raw_datafiles(
     pt['sessionId'] = pt['wid'].map(mapping)
 
 # %%
+    # Check if the directory exists, and create it if it does not
+    if not os.path.exists(EXP_RESULTS_DIR):
+        os.makedirs(EXP_RESULTS_DIR)
+
     # save
     pt[['wid', 'bonusDollars']].to_json(EXP_RESULTS_DIR+"all-bonuses.json")
     pt = pt.drop('wid', axis=1)

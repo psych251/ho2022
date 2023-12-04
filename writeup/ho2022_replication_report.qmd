@@ -19,7 +19,7 @@ In this paper, the authors propose task construal – a computational framework 
 
 For this replication, I will recreate the initial experiment where the participants are first asked to navigate a maze composed of tetromino-shaped obstacles and then probed on their awareness of each obstacle after completing the navigation. Specifically, I will be reproducing the finding in Figure 3a, where they plot a histogram of the participants’ mean awareness of each obstacle, splitting on whether or not the value-guided construal model assigned less than or greater than 50% probability of including the obstacle in the construal.
 
-Rather than using psiTurk and jsPsych (v.6.0.1), I will be using Prolific on its own and migrating the code to the most recent version of jsPsych (v.7.3.3) for ease of future use. Rather than regenerating the scores from the computational models, I will use the same stimuli in the original paper. To generate the figures, I will directly compare the results with the model outputs from the original paper (i.e., I will not be recreating the model from scratch). The primary challenge will lie in recreating the behavioral experiment.
+Like the original authors, I will be using psiTurk and jsPsych (v.6.0.1) with Prolific. Rather than regenerating the scores from the computational models, I will use the same stimuli in the original paper. To generate the figures, I will directly compare the results with the model outputs from the original paper (i.e., I will not be recreating the model from scratch). The primary challenge will lie in recreating the behavioral experiment.
 
 [Link to repository](https://github.com/psych251/ho2022)<br>
 [Link to paper](https://github.com/psych251/ho2022/blob/main/original_paper/Ho%20et%20al.%20-%202022%20-%20People%20construct%20simplified%20mental%20representations.pdf)<br>
@@ -32,7 +32,9 @@ Rather than using psiTurk and jsPsych (v.6.0.1), I will be using Prolific on its
 
 ~~Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.~~ 
 
-Will be covered next week. For the primary analysis, the authors report $\chi^2(1, N=84)=23.03$, $p = 1.6 \times 10^{-6}$, effect size $w = 0.52$
+For the primary analysis, the authors performed a $\chi^2$ test for independence between participants' mean awareness responses of each obstacle in each maze and the model predictions. They reported $\chi^2(1, N=84)=23.03$, $p = 1.6 \times 10^{-6}$, effect size $w = 0.52$. 
+
+Due to constraints on funding, the large effect size of $0.52$, and the specifics of this analysis, we believe that a sample of $n=100$ will suffice to detect the effect with sufficient confidence. This is because the $\chi^2$ test is actually looking at a comparison of 84 obstacles across 12 mazes, where each of the 84 obstacles is given (1) a model likelihood prediction of whether or not participants will be aware of the obstacle, and (2) the average awareness rating (on an 8-point scale, normalized between 0 and 1) across all participants in the sample. So increasing the sample only increases our confidence in each obstacle's awareness rating, however as shown in the pilot data these awareness ratings converge relatively quickly.
 
 
 ### Planned Sample
@@ -45,6 +47,8 @@ In the original paper, the authors requested 200 participants on Prolific and wr
 * \>1,500 ms was spent in the last three steps
 
 Participants with <80% of trials after exclusions or who failed 2 of 3 comprehension questions were excluded, which resulted in n = 161 participants’ data being analysed. The authors reported the following demographics: median age of 28; 81 male, 75 female, 5 neither
+
+In our replication, we will recruit 100 participants due to the considerations aformentioned. 
 
 ### Materials
 
@@ -74,7 +78,7 @@ I also aim to reconstruct the plot from figure 3a, which is a histogram of parti
 
 ### Differences from Original Study
 
-I will aim to recreate the experiment precisely using jsPsych version 7.3, however differences in versions may result in small changes in visual display (e.g., font) in the experiment. Aside from that, a separate random sample of participants will be recruited on Prolific. 
+The study will be exactly the same, with the exception of a separate random sample of participants recruited on Prolific and a separate consent form.
 
 <!-- ### Methods Addendum (Post Data Collection) -->
 
@@ -91,8 +95,335 @@ I will aim to recreate the experiment precisely using jsPsych version 7.3, howev
 
 ### Data preparation
 
-Can this be done in python? The original data preparation code is written in python [here](https://github.com/markkho/value-guided-construal/blob/main/analyses/prep_data.py).
+The original data preparation code is written in python [here](https://github.com/markkho/value-guided-construal/blob/main/analyses/prep_data.py)., and we will be reusing this code instead of writing it in the quarto document.
 
+First, we call `pull_data_from_server` and `parse_raw_datafiles` fron `pull_results.py`:
+
+```
+import os
+import urllib.request
+import csv, json
+import fire
+import numpy as np
+import pandas as pd
+from vgc_project.gridutils import untransformations, untransformState, transformations
+
+def pull_data_from_server(EXP_NAME, RAWRESULTS_DIR, CREDENTIALS_FILE):
+    """Download data from the server"""
+
+    CREDENTIALS = json.load(open(CREDENTIALS_FILE, 'r'))
+    EXPURL = CREDENTIALS["EXPURL"]
+    USERNAME = CREDENTIALS["USERNAME"]
+    PASSWORD = CREDENTIALS["PASSWORD"]
+    
+    sourcedest = [
+        (f"data/{EXP_NAME}/trialdata", RAWRESULTS_DIR+"rawtrialdata.csv"),
+        (f"data/{EXP_NAME}/questiondata", RAWRESULTS_DIR+"rawquestiondata.csv"),
+        (f"data/{EXP_NAME}/bonusdata", RAWRESULTS_DIR+"rawbonusdata.csv")
+    ]
+    # stuff needed to open with authentication
+    print(f"pulling data for experiment '{EXP_NAME}'")
+    password_mgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()
+    password_mgr.add_password(None, EXPURL, USERNAME, PASSWORD)
+    handler = urllib.request.HTTPBasicAuthHandler(password_mgr)
+
+    for SOURCE, DEST in sourcedest:
+        opener = urllib.request.build_opener(handler)
+        opener.open(EXPURL+SOURCE)
+        urllib.request.install_opener(opener)
+        urllib.request.urlretrieve(EXPURL+SOURCE, DEST)
+
+#%%
+def parse_raw_datafiles(
+    BASEGRIDS_FILENAME, RAWRESULTS_DIR,
+    EXP_CONFIG_FILE, EXP_RESULTS_DIR):
+#%%
+    """Parse downloaded datafiles"""
+    print("Parsing downloaded datafiles...")
+
+    basegrids = json.load(open(BASEGRIDS_FILENAME, 'r'))
+    trialdata = [line for line in csv.reader(open(RAWRESULTS_DIR+"rawtrialdata.csv", 'r'))]
+    questiondata = [line for line in csv.reader(open(RAWRESULTS_DIR+"rawquestiondata.csv", 'r'))]
+    bonusdata = [line for line in csv.reader(open(RAWRESULTS_DIR+"rawbonusdata.csv", 'r'))]
+
+    # jsPsych does not save questions
+    expConfig = json.load(open(EXP_CONFIG_FILE, 'r'))
+    cond0 = expConfig['timelines'][0]
+
+    excludewid = [
+        '5e14f5764f849eb011a0da:02my8yeqr7n6' #debugging
+    ]
+# %%
+    #parse question data
+    participantdata = {}
+    for row in questiondata:
+        wid, key, value = row
+        if "debug" in wid:
+            continue
+        if wid in excludewid:
+            continue
+        participantdata[wid] = participantdata.get(wid, {})
+        participantdata[wid][key] = value
+
+# %%
+    # parse trial data
+    trainingtrials = []
+    navtrials = []
+    attntrials = []
+    startendtimes = {}
+
+    for t in trialdata:
+        wid, page, datetimeMS, record = t
+        if "debug" in wid or (wid in excludewid):
+            continue
+        startendtimes[wid] = startendtimes.get(wid, {'starttime': np.inf, "endtime": -np.inf})
+        startendtimes[wid]['starttime'] = min(startendtimes[wid]['starttime'], int(datetimeMS))
+        startendtimes[wid]["endtime"] = max(startendtimes[wid]["endtime"], int(datetimeMS))
+        record = json.loads(record)
+        record['wid'] = wid
+        
+        if type(record.get('data', None)) == list:
+            essence = {k: v for k, v in record.items() if k != "data"}
+            for subrecord in record.get('data', None):
+                if subrecord.get('roundtype', None) == "navigation":
+                    navtrials.append({**essence, **subrecord})
+                elif subrecord.get('roundtype', None) == "practice":
+                    trainingtrials.append({**essence, **subrecord})
+                else:
+                    print(subrecord)
+
+        if record.get('roundtype', None) == "navigation":
+            navtrials.append(record)
+        elif record.get('roundtype', None) == "practice":
+            trainingtrials.append(record)
+        elif record.get("trial_type", None) == "GridBlockAttentionQuery":
+            attntrials.append({**{k: v for k, v in record.items() if k != "data"}, **record.get('data', None)})
+        elif record.get("type", None) == "experiment_setup":
+            del record['bonusDollars']
+            participantdata[wid] = participantdata.get(wid, {})
+            participantdata[wid].update(record)
+        elif record.get('trial_type') in ["survey-multi-choice", "survey-text"]:
+            participantdata[wid] = participantdata.get(wid, {})
+            trialidx = record['trial_index'] - 1 #first is fullscreen
+            trialparams = cond0[trialidx]['questions']
+            record2 = {trialparams[int(qi[1:])]['name']: resp
+                       for qi, resp in json.loads(record['responses']).items()}
+            participantdata[wid].update(record2)
+        elif record.get('trial_type') in ["survey-likert"]:
+            participantdata[wid] = participantdata.get(wid, {})
+            trialidx = record['trial_index'] - 1 #first is fullscreen
+            trialparams = cond0[trialidx]['questions']
+            record2 = {trialparams[int(qi[1:])]['name']: trialparams[int(qi[1:])]['labels'][resp]
+                       for qi, resp in json.loads(record['responses']).items()}
+            participantdata[wid].update(record2)
+        elif record.get('trial_type') in ["GridNavigation", "GridMatching",
+                                          "CustomInstructions", "fullscreen",
+                                          "GridMatchConfidence", "GridBlockAttentionQuery"]:
+            continue
+        elif record.get('type') in ["instructions"]:
+            continue
+        else:
+            print(record)
+
+    for wid, rec in participantdata.items():
+        try:
+            rec.update(startendtimes[wid])
+        except KeyError:
+            continue
+
+# %%
+    pt = pd.DataFrame(participantdata.values())
+    pt['wid'] = participantdata.keys()
+    tt = pd.DataFrame(trainingtrials)
+    nt = pd.DataFrame(navtrials)
+    at = pd.DataFrame(attntrials)
+
+# %%
+    # participant trials
+    pt['totaltime'] = pt['endtime'] - pt['starttime']
+
+# %% codecell
+    # set up navtrials
+    nt['grid'] = nt['gridname'].apply(lambda n: int(n.split("-")[1]))
+    nt['trans'] = nt['gridname'].apply(lambda n: n.split("-")[3])
+    nt['trialnum'] = nt['trialnum'].apply(int)
+    nt['round'] = nt['round'].apply(int)
+    nt['rt'] = nt['response_datetime'] - nt['start_datetime']
+
+    # ### recoding navigation trials
+    transformedGrids = {}
+    def recodeState(row):
+        t = row['trans']
+        ts = row['trans_state']
+        g = basegrids[f"grid-{row['grid']}-0"]
+        try:
+            tg = transformedGrids[(t, tuple(g))]
+        except KeyError:
+            tg = transformations[t](g)
+            transformedGrids[(t, tuple(g))] = tg
+        s = untransformState[t](tg, ts)
+        return [int(si) for si in tuple(np.rint(s))]
+    nt['trans_state'] = nt['state']
+    nt['state'] = nt.apply(recodeState, axis=1)
+
+# %%
+    # attention trials
+    attn_resp_recode = {
+        '1': -4, '2': -3, '3': -2,
+        '4': -1, '5': 1,
+        '6': 2, '7': 3, '8': 4
+    }
+    at['grid'] = at['navgridname'].apply(lambda n: int(n.split('-')[1]))
+    at['trans'] = at['navgridname'].apply(lambda n: n.split('-')[3])
+    at['attention'] = at['response'].apply(lambda r: attn_resp_recode[str(r).strip()])
+    at['rt'] = at['responsetime'] - at['starttime']
+    at['logrt'] = np.log(at['rt'])
+
+    mapping = nt.set_index('wid')['sessionId'].to_dict()
+    pt['sessionId'] = pt['wid'].map(mapping)
+
+# %%
+    # Check if the directory exists, and create it if it does not
+    if not os.path.exists(EXP_RESULTS_DIR):
+        os.makedirs(EXP_RESULTS_DIR)
+
+    # save
+    pt[['wid', 'bonusDollars']].to_json(EXP_RESULTS_DIR+"all-bonuses.json")
+    pt = pt.drop('wid', axis=1)
+    pt.to_json(EXP_RESULTS_DIR+"all-participantdata.json")
+    tt = tt.drop('wid', axis=1)
+    tt.to_json(EXP_RESULTS_DIR+"all-trainingtrials.json")
+    nt = nt.drop('wid', axis=1)
+    nt.to_json(EXP_RESULTS_DIR+"all-navtrials.json")
+    at = at.drop('wid', axis=1)
+    at.to_json(EXP_RESULTS_DIR+"all-attentiontrials.json")
+
+    print(f"Total participants: {len(pt)}")
+
+#%%
+if __name__ == "__main__":
+    fire.Fire()
+```
+
+Then, we run `prep_results.py`:
+```
+#
+# Prepare results for analysis
+#
+import pandas as pd
+import numpy as np
+from collections import defaultdict
+import fire
+import json
+
+NUM_ROUNDS = 12
+
+# Exclusion criteria
+COMPREHENSION_CHECK_CUTOFF = 2
+TOTAL_NAV_TIME_CUTOFF_MS = 20000
+LAST3STEPS_RT_CUTOFF_MS = 1500
+INIT_STEP_RT_CUTOFF_MS = 5000
+NON_INITIAL_RT_CUTOFF_MS = 2000
+VALID_ROUNDS_CUTOFF_PROP = .8
+
+def do_exclusions(RESULTSDIR, BASEGRIDS_FILENAME):
+    """Apply exclusion criteria to results files"""
+    # load data
+    pt = pd.read_json(open(RESULTSDIR+"all-participantdata.json", 'r'))
+    nt = pd.read_json(open(RESULTSDIR+"all-navtrials.json", 'r'))
+    at = pd.read_json(open(RESULTSDIR+"all-attentiontrials.json", 'r'))
+
+    n_grid_probes = len(at[['grid', 'probeobs']].drop_duplicates())
+    at = at[at['sessionId'].isin(pt.sessionId)]
+    nt = nt[nt['sessionId'].isin(pt.sessionId)]
+    notMissingTrials = at.groupby("sessionId")['block'].count() >= VALID_ROUNDS_CUTOFF_PROP*n_grid_probes
+    sidKeep = notMissingTrials.index[notMissingTrials]
+    at = at[at['sessionId'].isin(sidKeep)]
+    nt = nt[nt['sessionId'].isin(sidKeep)]
+    pt = pt[pt['sessionId'].isin(sidKeep)]
+    print(f"{len(sidKeep)} of {len(notMissingTrials)} with >{VALID_ROUNDS_CUTOFF_PROP*n_grid_probes} recorded trials")
+
+    print("Performing Exclusions")
+    response_stats = defaultdict(lambda: list)
+
+    # Comprehension checks
+    def failed_comp_check(r):
+        return ((r['navCheck'] == 'True') +
+            (r['navBonusCheck'] == '10 cents') +
+            (r['memoryBonusCheck'] == 'None')) < COMPREHENSION_CHECK_CUTOFF
+    failed_comp = pt.apply(failed_comp_check, axis=1)
+    passed_comp = pt[~failed_comp]['sessionId']
+
+    pt = pt[pt['sessionId'].isin(passed_comp)]
+    at = at[at['sessionId'].isin(passed_comp)]
+    nt = nt[nt['sessionId'].isin(passed_comp)]
+
+    print(f"{len(passed_comp)} of {len(failed_comp)} passed {COMPREHENSION_CHECK_CUTOFF} of 3 comprehension checks")
+
+    # Response Time and Round Exclusions
+    def calc_by_round_exclusion_criteria(ts):
+        ts = ts.sort_values('trialnum')
+        straj = [tuple(s) for s in ts.sort_values('trialnum')['state']]
+        tnums = ts['trialnum']
+        non_consec_trials = \
+            [(i + 1) != ii for i, ii in zip(tnums[:], tnums[1:])]
+
+        total_nav_time = \
+            ts['response_datetime'].max() - ts['start_datetime'].min()
+        last_3_steps_rt = ts.sort_values('trialnum').iloc[-3:]['rt'].sum()
+        init_step_time = ts[ts['trialnum'] == 0]['rt'].max()
+        non_initial_step_rt = ts[ts['trialnum'] != 0]['rt'].max()
+
+        return pd.Series({
+            'non_consec_trials': sum(non_consec_trials) > 0,
+            'multiple_first_trials':\
+                (ts['trialnum'] == 0).sum() > 1,
+            'high_total_nav_time':\
+                total_nav_time > TOTAL_NAV_TIME_CUTOFF_MS,
+            'high_last_3_steps_rt':\
+                last_3_steps_rt > LAST3STEPS_RT_CUTOFF_MS,
+            'high_initial_step_time':\
+                init_step_time > INIT_STEP_RT_CUTOFF_MS,
+            'high_non_initial_step_rt': \
+                non_initial_step_rt > NON_INITIAL_RT_CUTOFF_MS
+        })
+
+    round_exclusions = nt.groupby(["grid", "sessionId", "round"]).\
+        apply(calc_by_round_exclusion_criteria)
+    round_exclusions['any_exclusion'] = round_exclusions.apply(any, axis=1)
+
+    for col in round_exclusions.columns:
+        print('\t'.join([col+": ", f"{round_exclusions[col].sum()} of {len(round_exclusions)}"]))
+
+    rounds_to_keep =\
+        round_exclusions[~round_exclusions['any_exclusion']].\
+        reset_index()[['grid', 'sessionId', 'round']]
+    at = at.merge(rounds_to_keep)
+    nt = nt.merge(rounds_to_keep)
+
+    # Exclusion based on valid rounds
+    enoughTrials = at.groupby('sessionId')['attention'].count() >= VALID_ROUNDS_CUTOFF_PROP*n_grid_probes
+    sidKeep = enoughTrials.index[enoughTrials]
+    print(f"Participants with {VALID_ROUNDS_CUTOFF_PROP*n_grid_probes} of {n_grid_probes} valid response trials: {len(sidKeep)} of {len(pt)}")
+
+    at = at[at['sessionId'].isin(sidKeep)]
+    nt = nt[nt['sessionId'].isin(sidKeep)]
+    pt = pt[pt['sessionId'].isin(sidKeep)]
+
+    # save
+    print(f"Total remaining participants: {len(pt)}")
+    print(f"Total remaining rounds: {len(at.groupby(['sessionId', 'grid']))}")
+    print(f"Total remaining responses: {len(at)}")
+
+    pt.to_json(RESULTSDIR+"participantdata.json")
+    at.to_json(RESULTSDIR+"attentiontrials.json")
+    nt.to_json(RESULTSDIR+"navtrials.json")
+
+if __name__ == '__main__':
+    fire.Fire()
+```
+
+Third, we run `prep_data.py`:
 ```
 import pandas as pd
 import numpy as np
@@ -287,8 +618,37 @@ The analysis code can be found [here](https://github.com/markkho/value-guided-co
 
 *Side-by-side graph with original graph is ideal here*
 
-$\chi^2$ test
+$\chi^2$ test for independence:
 ```
+from itertools import product
+import json
+import matplotlib.pyplot as plt
+from matplotlib.colors import to_rgb
+from matplotlib.patches import Rectangle, Arrow, Circle
+import matplotlib
+matplotlib.rcParams['pdf.fonttype'] = 42
+
+import numpy as np
+import seaborn as sns
+import pandas as pd
+from scipy import stats
+
+from vgc_project.r import create_R_model_interface, ImmutableDataFrame
+from vgc_project.parameter_fit import create_fit_vgc_model_to_trials, Trial
+
+joblib_cache_location = "./_analysiscache"
+rmods = create_R_model_interface(joblib_cache_location=joblib_cache_location)
+fit_vgc_model_to_trials = create_fit_vgc_model_to_trials(joblib_cache_location=joblib_cache_location)
+
+import analysisutils
+from analysisutils import predictor_names, short_predictor_names
+from prep_data import \
+    mazes,\
+    model_preds,\
+    get_exp1_at
+
+exp1_at = get_exp1_at("exp1/data/pilot_b/")
+
 exp1_means = exp1_at.groupby(['grid', 'obstacle'])[["attention_N", "static_vgc_weight"]].mean().reset_index()
 exp1_contab = pd.crosstab(exp1_means["attention_N"] >= .5, exp1_means["static_vgc_weight"] >= .5)
 chi2, pval, dof, exp = stats.chi2_contingency(exp1_contab, correction=False)
@@ -296,14 +656,99 @@ chi2_effectsize_w = np.sqrt(chi2/len(exp1_means))
 pval = analysisutils.pval_to_string(pval)
 exp1_chi2_res = f"$\chi^2({dof}, N={len(exp1_means)})={chi2:.2f}$, $p {pval}$, effect size $w = {chi2_effectsize_w:.2f}$"
 
-with open("./inputs/exp1_chi2_res_svgc.tex", "w") as f:
-    f.write(exp1_chi2_res)
 print(exp1_chi2_res)
 ```
 
+Output (pilot B):
+```
+$\chi^2(1, N=84)=4.42$, $p = 0.036$, effect size $w = 0.23$
+```
+
+Output (Original):
+```
+$\chi^2(1, N=84)=23.03$, $p = 1.6\times 10^{-6}$, effect size $w = 0.52$
+```
+
+
 ### Exploratory analyses
 
-Any follow-up analyses desired (not required).  
+Initial experiment mean awareness histogram (Fig. 3a from paper):
+```
+expmod_means = exp1_at.groupby(['grid', 'obstacle'])[['attention_N', "static_vgc_weight"]].\
+    mean().reset_index()
+    
+# create figure
+fig_width_mm = 50
+fig_height_mm = 50
+mm_to_inch = 1/25.4 
+
+assert fig_width_mm <= 182
+assert fig_height_mm <= 245
+
+import matplotlib.gridspec as gridspec
+fig, ax = plt.subplots(
+    1, 1, 
+    figsize=(fig_width_mm*mm_to_inch, fig_height_mm*mm_to_inch),
+    dpi=300
+)
+for spine in ['top','bottom','left','right']:
+    ax.spines[spine].set_linewidth(.5)
+    
+    
+bins = np.linspace(0, 1, 10)
+sns.histplot(
+    expmod_means[expmod_means['static_vgc_weight'] >= .5]['attention_N'],
+    ax=ax, kde=False, bins=bins, color='mediumblue', linewidth=.5
+)
+sns.histplot(
+    expmod_means[expmod_means['static_vgc_weight'] < .5]['attention_N'],
+    ax=ax, kde=False, bins=bins, color='gainsboro', linewidth=.5
+)
+
+for _, row in expmod_means.iterrows():
+    ax.plot(
+        # [row['attention_N'], row['attention_N']], [-2, -.1],
+        [row['attention_N'], ], [-1+(.5 - np.random.random())*.8],
+        marker='.',
+        alpha=.5,
+        markersize=6,
+        # markercolor='mediumblue' if row['vgc_weight'] >= .5 else 'gainsboro'
+        color='mediumblue' if row['static_vgc_weight'] >= .5 else 'gainsboro',
+        markeredgewidth=.25,
+        markeredgecolor='k'
+    )
+
+
+ax.tick_params(axis='both', width=.5)
+ax.set(**dict(
+    xticks=[0, .25, .5, .75, 1],
+    xlim=(0, 1),
+    ylim=(-2, 15),
+    yticks=[0, 5, 10, 15],
+))
+ax.set_xlabel('Initial Experiment Mean Awareness', fontsize=7, fontfamily = "Arial")
+ax.set_ylabel('Count', fontsize=7, fontfamily = "Arial")
+plt.yticks(fontname = "Arial", fontsize=7)
+plt.xticks(fontname = "Arial", fontsize=7)
+# fig.savefig("results/exp1_hist_svgc.pdf")
+# fig.set_dpi(150)
+```
+
+Output (Pilot B):
+![Image](mean_awareness_histogram_replication.png)
+
+Output (Original):
+![Image](mean_awareness_histogram.png)
+
+Output (Model prediction):
+![Image](maze_awareness_predictions.png)
+
+Output (Pilot B):
+![Image](maze_awareness_responses_replication.png)
+
+Output (Original):
+![Image](maze_awareness_responses.png)
+
 
 ## Discussion
 

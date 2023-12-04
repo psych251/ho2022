@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Justin Yang (justin.yang@stanford.edu)">
+
+<title>Replication of initial experiment from Mark Ho et al.&nbsp;(2022). People construct simplified mental representations to plan. Nature.</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="ho2022_replication_report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ho2022_replication_report_files/libs/quarto-html/quarto.js"></script>
+<script src="ho2022_replication_report_files/libs/quarto-html/popper.min.js"></script>
+<script src="ho2022_replication_report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="ho2022_replication_report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="ho2022_replication_report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ho2022_replication_report_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="ho2022_replication_report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="ho2022_replication_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="ho2022_replication_report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#power-analysis" id="toc-power-analysis" class="nav-link" data-scroll-target="#power-analysis">Power Analysis</a></li>
+  <li><a href="#planned-sample" id="toc-planned-sample" class="nav-link" data-scroll-target="#planned-sample">Planned Sample</a></li>
+  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
+  <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure">Procedure</a></li>
+  <li><a href="#analysis-plan" id="toc-analysis-plan" class="nav-link" data-scroll-target="#analysis-plan">Analysis Plan</a></li>
+  <li><a href="#differences-from-original-study" id="toc-differences-from-original-study" class="nav-link" data-scroll-target="#differences-from-original-study">Differences from Original Study</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data preparation</a></li>
+  <li><a href="#confirmatory-analysis" id="toc-confirmatory-analysis" class="nav-link" data-scroll-target="#confirmatory-analysis">Confirmatory analysis</a></li>
+  <li><a href="#exploratory-analyses" id="toc-exploratory-analyses" class="nav-link" data-scroll-target="#exploratory-analyses">Exploratory analyses</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a>
+  <ul class="collapse">
+  <li><a href="#summary-of-replication-attempt" id="toc-summary-of-replication-attempt" class="nav-link" data-scroll-target="#summary-of-replication-attempt">Summary of Replication Attempt</a></li>
+  <li><a href="#commentary" id="toc-commentary" class="nav-link" data-scroll-target="#commentary">Commentary</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Replication of initial experiment from Mark Ho et al.&nbsp;(2022). <em>People construct simplified mental representations to plan</em>. Nature.</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Justin Yang (justin.yang@stanford.edu) </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>I will replicate the results shown in Figure 3 of the paper <em>People construct simplified mental representations to plan</em> by Mark Ho et al.&nbsp;(2022).</p>
+<p>In this paper, the authors propose task construal – a computational framework of planning that allows for constructing simplified task representations before planning, claiming that this capacity to control our mental representations better mirrors human behavior. Specifically, the authors derive a model of value-guided construal under the resource-rational perspective that an ideal, cognitively limited decision-maker should form value-guided construals that balance the complexity of a representation and its use for planning and acting. I am interested in understanding how we might construct and use flexible representations for mental simulation, so this work in the planning domain is highly relevant. In particular, their use of memory traces to probe whether an object was represented during planning is methodologically relevant to my work as I look for ways to explore the content of our mental representations in my research.</p>
+<p>For this replication, I will recreate the initial experiment where the participants are first asked to navigate a maze composed of tetromino-shaped obstacles and then probed on their awareness of each obstacle after completing the navigation. Specifically, I will be reproducing the finding in Figure 3a, where they plot a histogram of the participants’ mean awareness of each obstacle, splitting on whether or not the value-guided construal model assigned less than or greater than 50% probability of including the obstacle in the construal.</p>
+<p>Like the original authors, I will be using psiTurk and jsPsych (v.6.0.1) with Prolific. Rather than regenerating the scores from the computational models, I will use the same stimuli in the original paper. To generate the figures, I will directly compare the results with the model outputs from the original paper (i.e., I will not be recreating the model from scratch). The primary challenge will lie in recreating the behavioral experiment.</p>
+<p><a href="https://github.com/psych251/ho2022">Link to repository</a><br> <a href="https://github.com/psych251/ho2022/blob/main/original_paper/Ho%20et%20al.%20-%202022%20-%20People%20construct%20simplified%20mental%20representations.pdf">Link to paper</a><br> <a href="https://justintheyang.github.io/">Link to behavioral experiment (doesn’t exist yet)</a></p>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<section id="power-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="power-analysis">Power Analysis</h3>
+<p><del>Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size. Considerations of feasibility for selecting planned sample size.</del></p>
+<p>For the primary analysis, the authors performed a <span class="math inline">\(\chi^2\)</span> test for independence between participants’ mean awareness responses of each obstacle in each maze and the model predictions. They reported <span class="math inline">\(\chi^2(1, N=84)=23.03\)</span>, <span class="math inline">\(p = 1.6 \times 10^{-6}\)</span>, effect size <span class="math inline">\(w = 0.52\)</span>.</p>
+<p>Due to constraints on funding, the large effect size of <span class="math inline">\(0.52\)</span>, and the specifics of this analysis, we believe that a sample of <span class="math inline">\(n=100\)</span> will suffice to detect the effect with sufficient confidence. This is because the <span class="math inline">\(\chi^2\)</span> test is actually looking at a comparison of 84 obstacles across 12 mazes, where each of the 84 obstacles is given (1) a model likelihood prediction of whether or not participants will be aware of the obstacle, and (2) the average awareness rating (on an 8-point scale, normalized between 0 and 1) across all participants in the sample. So increasing the sample only increases our confidence in each obstacle’s awareness rating, however as shown in the pilot data these awareness ratings converge relatively quickly.</p>
+</section>
+<section id="planned-sample" class="level3">
+<h3 class="anchored" data-anchor-id="planned-sample">Planned Sample</h3>
+<p>In the original paper, the authors requested 200 participants on Prolific and wrote that a trial was excluded if any of the following occured during navigation:</p>
+<ul>
+<li>&gt;5,000 ms was spent at the initial state</li>
+<li>&gt;2,000 ms was spent at any non-initial state</li>
+<li>&gt;20,000 ms was spent on the entire trial</li>
+<li>&gt;1,500 ms was spent in the last three steps</li>
+</ul>
+<p>Participants with &lt;80% of trials after exclusions or who failed 2 of 3 comprehension questions were excluded, which resulted in n = 161 participants’ data being analysed. The authors reported the following demographics: median age of 28; 81 male, 75 female, 5 neither</p>
+<p>In our replication, we will recruit 100 participants due to the considerations aformentioned.</p>
+</section>
+<section id="materials" class="level3">
+<h3 class="anchored" data-anchor-id="materials">Materials</h3>
+<p>Materials relevant to the study can be found <a href="https://github.com/markkho/value-guided-construal/tree/main/experiments/exp1">here</a>. The preregistration is <a href="https://osf.io/mv3ux">here</a>. The primary material needed is the set of 12 mazes. which is found <a href="https://github.com/markkho/value-guided-construal/tree/main/experiments/exp1">here</a>.</p>
+</section>
+<section id="procedure" class="level3">
+<h3 class="anchored" data-anchor-id="procedure">Procedure</h3>
+<blockquote class="blockquote">
+<p>Our initial experiment used a maze-navigation task in which the participants moved a circle from a starting location on a grid to a goal location using the arrow keys. The set of initial mazes consisted of twelve 11×11 mazes with seven blue tetronimo-shaped obstacles and centre walls arranged in a cross that blocked movement. On each trial, the participants were first shown a screen displaying only the centre walls. When they pressed the spacebar, the circle they controlled, the goal and the obstacles appeared, and they could begin moving immediately. Moreover, to ensure that the participants remained focused on moving, we placed a green square on the goal that shrank and would disappear after 1,000 ms but reset whenever an arrow key was pressed, except at the beginning of the trial when the green square took longer to shrink (5,000 ms). The participants received US$0.10 for reaching the goal without the green square disappearing (in addition to the base pay of US$0.98). The mazes were pseudorandomly rotated or flipped, so the start and end state was constantly changing, and the order of mazes was pseudorandomized. After completing each trial, the participants received awareness probes, which showed a static image of the maze they had just navigated, with one of the obstacles shown in light blue. The participants were asked “How aware of the highlighted obstacle were you at any point?” and could respond using an eight-point scale (which was rescaled to 0–1 for analyses). Probes were presented for the seven obstacles in a maze. None of the probes were associated with a bonus.</p>
+</blockquote>
+</section>
+<section id="analysis-plan" class="level3">
+<h3 class="anchored" data-anchor-id="analysis-plan">Analysis Plan</h3>
+<p>I aim to follow the following analysis plan:</p>
+<ul>
+<li>Collect data</li>
+<li>Preprocessing and apply exclusion criteria using <a href="https://github.com/markkho/value-guided-construal/blob/main/experiments/exp1/prep_results.py">this python script</a></li>
+<li>Generate <span class="math inline">\(\chi^2\)</span> test and figure 3a using <a href="https://github.com/markkho/value-guided-construal/blob/main/analyses/exp-1.ipynb">this jupyter notebook</a></li>
+</ul>
+<p>The <strong>key analysis of interest</strong> is the <span class="math inline">\(\chi^2\)</span> test for independence. The authors first split the obstacles across mazes on the basis of whether the value-guided construal model assigned a probability of less than or equal to 0.5 or greater than 0.5. Then after also splitting on the basis of whether mean awareness responses were less than or equal to 0.5 or greater than 0.5, they used a <span class="math inline">\(\chi^2\)</span> test for independence and found that this awareness split was predicted by value-guided construal (<span class="math inline">\(\chi^2(1, N=84)=23.03\)</span>, <span class="math inline">\(p = 1.6 \times 10^{-6}\)</span>, effect size <span class="math inline">\(w = 0.52\)</span>).</p>
+<p>I also aim to reconstruct the plot from figure 3a, which is a histogram of participant mean awareness responses, splitting the data on whether value-guided construal assigned a probability of less than or equal to 0.5 or greater than 0.5.</p>
+</section>
+<section id="differences-from-original-study" class="level3">
+<h3 class="anchored" data-anchor-id="differences-from-original-study">Differences from Original Study</h3>
+<p>The study will be exactly the same, with the exception of a separate random sample of participants recruited on Prolific and a separate consent form.</p>
+<!-- ### Methods Addendum (Post Data Collection) -->
+<!-- You can comment this section out prior to final report with data collection. -->
+<!-- #### Actual Sample -->
+<!--   Sample size, demographics, data exclusions based on rules spelled out in analysis plan~~ -->
+<!-- #### Differences from pre-data collection methods plan -->
+<!--   Any differences from what was described as the original plan, or “none”. -->
+</section>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="data-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="data-preparation">Data preparation</h3>
+<p>The original data preparation code is written in python <a href="https://github.com/markkho/value-guided-construal/blob/main/analyses/prep_data.py">here</a>., and we will be reusing this code instead of writing it in the quarto document.</p>
+<p>First, we call <code>pull_data_from_server</code> and <code>parse_raw_datafiles</code> fron <code>pull_results.py</code>:</p>
+<pre><code>import os
+import urllib.request
+import csv, json
+import fire
+import numpy as np
+import pandas as pd
+from vgc_project.gridutils import untransformations, untransformState, transformations
+
+def pull_data_from_server(EXP_NAME, RAWRESULTS_DIR, CREDENTIALS_FILE):
+    """Download data from the server"""
+
+    CREDENTIALS = json.load(open(CREDENTIALS_FILE, 'r'))
+    EXPURL = CREDENTIALS["EXPURL"]
+    USERNAME = CREDENTIALS["USERNAME"]
+    PASSWORD = CREDENTIALS["PASSWORD"]
+    
+    sourcedest = [
+        (f"data/{EXP_NAME}/trialdata", RAWRESULTS_DIR+"rawtrialdata.csv"),
+        (f"data/{EXP_NAME}/questiondata", RAWRESULTS_DIR+"rawquestiondata.csv"),
+        (f"data/{EXP_NAME}/bonusdata", RAWRESULTS_DIR+"rawbonusdata.csv")
+    ]
+    # stuff needed to open with authentication
+    print(f"pulling data for experiment '{EXP_NAME}'")
+    password_mgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()
+    password_mgr.add_password(None, EXPURL, USERNAME, PASSWORD)
+    handler = urllib.request.HTTPBasicAuthHandler(password_mgr)
+
+    for SOURCE, DEST in sourcedest:
+        opener = urllib.request.build_opener(handler)
+        opener.open(EXPURL+SOURCE)
+        urllib.request.install_opener(opener)
+        urllib.request.urlretrieve(EXPURL+SOURCE, DEST)
+
+#%%
+def parse_raw_datafiles(
+    BASEGRIDS_FILENAME, RAWRESULTS_DIR,
+    EXP_CONFIG_FILE, EXP_RESULTS_DIR):
+#%%
+    """Parse downloaded datafiles"""
+    print("Parsing downloaded datafiles...")
+
+    basegrids = json.load(open(BASEGRIDS_FILENAME, 'r'))
+    trialdata = [line for line in csv.reader(open(RAWRESULTS_DIR+"rawtrialdata.csv", 'r'))]
+    questiondata = [line for line in csv.reader(open(RAWRESULTS_DIR+"rawquestiondata.csv", 'r'))]
+    bonusdata = [line for line in csv.reader(open(RAWRESULTS_DIR+"rawbonusdata.csv", 'r'))]
+
+    # jsPsych does not save questions
+    expConfig = json.load(open(EXP_CONFIG_FILE, 'r'))
+    cond0 = expConfig['timelines'][0]
+
+    excludewid = [
+        '5e14f5764f849eb011a0da:02my8yeqr7n6' #debugging
+    ]
+# %%
+    #parse question data
+    participantdata = {}
+    for row in questiondata:
+        wid, key, value = row
+        if "debug" in wid:
+            continue
+        if wid in excludewid:
+            continue
+        participantdata[wid] = participantdata.get(wid, {})
+        participantdata[wid][key] = value
+
+# %%
+    # parse trial data
+    trainingtrials = []
+    navtrials = []
+    attntrials = []
+    startendtimes = {}
+
+    for t in trialdata:
+        wid, page, datetimeMS, record = t
+        if "debug" in wid or (wid in excludewid):
+            continue
+        startendtimes[wid] = startendtimes.get(wid, {'starttime': np.inf, "endtime": -np.inf})
+        startendtimes[wid]['starttime'] = min(startendtimes[wid]['starttime'], int(datetimeMS))
+        startendtimes[wid]["endtime"] = max(startendtimes[wid]["endtime"], int(datetimeMS))
+        record = json.loads(record)
+        record['wid'] = wid
+        
+        if type(record.get('data', None)) == list:
+            essence = {k: v for k, v in record.items() if k != "data"}
+            for subrecord in record.get('data', None):
+                if subrecord.get('roundtype', None) == "navigation":
+                    navtrials.append({**essence, **subrecord})
+                elif subrecord.get('roundtype', None) == "practice":
+                    trainingtrials.append({**essence, **subrecord})
+                else:
+                    print(subrecord)
+
+        if record.get('roundtype', None) == "navigation":
+            navtrials.append(record)
+        elif record.get('roundtype', None) == "practice":
+            trainingtrials.append(record)
+        elif record.get("trial_type", None) == "GridBlockAttentionQuery":
+            attntrials.append({**{k: v for k, v in record.items() if k != "data"}, **record.get('data', None)})
+        elif record.get("type", None) == "experiment_setup":
+            del record['bonusDollars']
+            participantdata[wid] = participantdata.get(wid, {})
+            participantdata[wid].update(record)
+        elif record.get('trial_type') in ["survey-multi-choice", "survey-text"]:
+            participantdata[wid] = participantdata.get(wid, {})
+            trialidx = record['trial_index'] - 1 #first is fullscreen
+            trialparams = cond0[trialidx]['questions']
+            record2 = {trialparams[int(qi[1:])]['name']: resp
+                       for qi, resp in json.loads(record['responses']).items()}
+            participantdata[wid].update(record2)
+        elif record.get('trial_type') in ["survey-likert"]:
+            participantdata[wid] = participantdata.get(wid, {})
+            trialidx = record['trial_index'] - 1 #first is fullscreen
+            trialparams = cond0[trialidx]['questions']
+            record2 = {trialparams[int(qi[1:])]['name']: trialparams[int(qi[1:])]['labels'][resp]
+                       for qi, resp in json.loads(record['responses']).items()}
+            participantdata[wid].update(record2)
+        elif record.get('trial_type') in ["GridNavigation", "GridMatching",
+                                          "CustomInstructions", "fullscreen",
+                                          "GridMatchConfidence", "GridBlockAttentionQuery"]:
+            continue
+        elif record.get('type') in ["instructions"]:
+            continue
+        else:
+            print(record)
+
+    for wid, rec in participantdata.items():
+        try:
+            rec.update(startendtimes[wid])
+        except KeyError:
+            continue
+
+# %%
+    pt = pd.DataFrame(participantdata.values())
+    pt['wid'] = participantdata.keys()
+    tt = pd.DataFrame(trainingtrials)
+    nt = pd.DataFrame(navtrials)
+    at = pd.DataFrame(attntrials)
+
+# %%
+    # participant trials
+    pt['totaltime'] = pt['endtime'] - pt['starttime']
+
+# %% codecell
+    # set up navtrials
+    nt['grid'] = nt['gridname'].apply(lambda n: int(n.split("-")[1]))
+    nt['trans'] = nt['gridname'].apply(lambda n: n.split("-")[3])
+    nt['trialnum'] = nt['trialnum'].apply(int)
+    nt['round'] = nt['round'].apply(int)
+    nt['rt'] = nt['response_datetime'] - nt['start_datetime']
+
+    # ### recoding navigation trials
+    transformedGrids = {}
+    def recodeState(row):
+        t = row['trans']
+        ts = row['trans_state']
+        g = basegrids[f"grid-{row['grid']}-0"]
+        try:
+            tg = transformedGrids[(t, tuple(g))]
+        except KeyError:
+            tg = transformations[t](g)
+            transformedGrids[(t, tuple(g))] = tg
+        s = untransformState[t](tg, ts)
+        return [int(si) for si in tuple(np.rint(s))]
+    nt['trans_state'] = nt['state']
+    nt['state'] = nt.apply(recodeState, axis=1)
+
+# %%
+    # attention trials
+    attn_resp_recode = {
+        '1': -4, '2': -3, '3': -2,
+        '4': -1, '5': 1,
+        '6': 2, '7': 3, '8': 4
+    }
+    at['grid'] = at['navgridname'].apply(lambda n: int(n.split('-')[1]))
+    at['trans'] = at['navgridname'].apply(lambda n: n.split('-')[3])
+    at['attention'] = at['response'].apply(lambda r: attn_resp_recode[str(r).strip()])
+    at['rt'] = at['responsetime'] - at['starttime']
+    at['logrt'] = np.log(at['rt'])
+
+    mapping = nt.set_index('wid')['sessionId'].to_dict()
+    pt['sessionId'] = pt['wid'].map(mapping)
+
+# %%
+    # Check if the directory exists, and create it if it does not
+    if not os.path.exists(EXP_RESULTS_DIR):
+        os.makedirs(EXP_RESULTS_DIR)
+
+    # save
+    pt[['wid', 'bonusDollars']].to_json(EXP_RESULTS_DIR+"all-bonuses.json")
+    pt = pt.drop('wid', axis=1)
+    pt.to_json(EXP_RESULTS_DIR+"all-participantdata.json")
+    tt = tt.drop('wid', axis=1)
+    tt.to_json(EXP_RESULTS_DIR+"all-trainingtrials.json")
+    nt = nt.drop('wid', axis=1)
+    nt.to_json(EXP_RESULTS_DIR+"all-navtrials.json")
+    at = at.drop('wid', axis=1)
+    at.to_json(EXP_RESULTS_DIR+"all-attentiontrials.json")
+
+    print(f"Total participants: {len(pt)}")
+
+#%%
+if __name__ == "__main__":
+    fire.Fire()</code></pre>
+<p>Then, we run <code>prep_results.py</code>:</p>
+<pre><code>#
+# Prepare results for analysis
+#
+import pandas as pd
+import numpy as np
+from collections import defaultdict
+import fire
+import json
+
+NUM_ROUNDS = 12
+
+# Exclusion criteria
+COMPREHENSION_CHECK_CUTOFF = 2
+TOTAL_NAV_TIME_CUTOFF_MS = 20000
+LAST3STEPS_RT_CUTOFF_MS = 1500
+INIT_STEP_RT_CUTOFF_MS = 5000
+NON_INITIAL_RT_CUTOFF_MS = 2000
+VALID_ROUNDS_CUTOFF_PROP = .8
+
+def do_exclusions(RESULTSDIR, BASEGRIDS_FILENAME):
+    """Apply exclusion criteria to results files"""
+    # load data
+    pt = pd.read_json(open(RESULTSDIR+"all-participantdata.json", 'r'))
+    nt = pd.read_json(open(RESULTSDIR+"all-navtrials.json", 'r'))
+    at = pd.read_json(open(RESULTSDIR+"all-attentiontrials.json", 'r'))
+
+    n_grid_probes = len(at[['grid', 'probeobs']].drop_duplicates())
+    at = at[at['sessionId'].isin(pt.sessionId)]
+    nt = nt[nt['sessionId'].isin(pt.sessionId)]
+    notMissingTrials = at.groupby("sessionId")['block'].count() &gt;= VALID_ROUNDS_CUTOFF_PROP*n_grid_probes
+    sidKeep = notMissingTrials.index[notMissingTrials]
+    at = at[at['sessionId'].isin(sidKeep)]
+    nt = nt[nt['sessionId'].isin(sidKeep)]
+    pt = pt[pt['sessionId'].isin(sidKeep)]
+    print(f"{len(sidKeep)} of {len(notMissingTrials)} with &gt;{VALID_ROUNDS_CUTOFF_PROP*n_grid_probes} recorded trials")
+
+    print("Performing Exclusions")
+    response_stats = defaultdict(lambda: list)
+
+    # Comprehension checks
+    def failed_comp_check(r):
+        return ((r['navCheck'] == 'True') +
+            (r['navBonusCheck'] == '10 cents') +
+            (r['memoryBonusCheck'] == 'None')) &lt; COMPREHENSION_CHECK_CUTOFF
+    failed_comp = pt.apply(failed_comp_check, axis=1)
+    passed_comp = pt[~failed_comp]['sessionId']
+
+    pt = pt[pt['sessionId'].isin(passed_comp)]
+    at = at[at['sessionId'].isin(passed_comp)]
+    nt = nt[nt['sessionId'].isin(passed_comp)]
+
+    print(f"{len(passed_comp)} of {len(failed_comp)} passed {COMPREHENSION_CHECK_CUTOFF} of 3 comprehension checks")
+
+    # Response Time and Round Exclusions
+    def calc_by_round_exclusion_criteria(ts):
+        ts = ts.sort_values('trialnum')
+        straj = [tuple(s) for s in ts.sort_values('trialnum')['state']]
+        tnums = ts['trialnum']
+        non_consec_trials = \
+            [(i + 1) != ii for i, ii in zip(tnums[:], tnums[1:])]
+
+        total_nav_time = \
+            ts['response_datetime'].max() - ts['start_datetime'].min()
+        last_3_steps_rt = ts.sort_values('trialnum').iloc[-3:]['rt'].sum()
+        init_step_time = ts[ts['trialnum'] == 0]['rt'].max()
+        non_initial_step_rt = ts[ts['trialnum'] != 0]['rt'].max()
+
+        return pd.Series({
+            'non_consec_trials': sum(non_consec_trials) &gt; 0,
+            'multiple_first_trials':\
+                (ts['trialnum'] == 0).sum() &gt; 1,
+            'high_total_nav_time':\
+                total_nav_time &gt; TOTAL_NAV_TIME_CUTOFF_MS,
+            'high_last_3_steps_rt':\
+                last_3_steps_rt &gt; LAST3STEPS_RT_CUTOFF_MS,
+            'high_initial_step_time':\
+                init_step_time &gt; INIT_STEP_RT_CUTOFF_MS,
+            'high_non_initial_step_rt': \
+                non_initial_step_rt &gt; NON_INITIAL_RT_CUTOFF_MS
+        })
+
+    round_exclusions = nt.groupby(["grid", "sessionId", "round"]).\
+        apply(calc_by_round_exclusion_criteria)
+    round_exclusions['any_exclusion'] = round_exclusions.apply(any, axis=1)
+
+    for col in round_exclusions.columns:
+        print('\t'.join([col+": ", f"{round_exclusions[col].sum()} of {len(round_exclusions)}"]))
+
+    rounds_to_keep =\
+        round_exclusions[~round_exclusions['any_exclusion']].\
+        reset_index()[['grid', 'sessionId', 'round']]
+    at = at.merge(rounds_to_keep)
+    nt = nt.merge(rounds_to_keep)
+
+    # Exclusion based on valid rounds
+    enoughTrials = at.groupby('sessionId')['attention'].count() &gt;= VALID_ROUNDS_CUTOFF_PROP*n_grid_probes
+    sidKeep = enoughTrials.index[enoughTrials]
+    print(f"Participants with {VALID_ROUNDS_CUTOFF_PROP*n_grid_probes} of {n_grid_probes} valid response trials: {len(sidKeep)} of {len(pt)}")
+
+    at = at[at['sessionId'].isin(sidKeep)]
+    nt = nt[nt['sessionId'].isin(sidKeep)]
+    pt = pt[pt['sessionId'].isin(sidKeep)]
+
+    # save
+    print(f"Total remaining participants: {len(pt)}")
+    print(f"Total remaining rounds: {len(at.groupby(['sessionId', 'grid']))}")
+    print(f"Total remaining responses: {len(at)}")
+
+    pt.to_json(RESULTSDIR+"participantdata.json")
+    at.to_json(RESULTSDIR+"attentiontrials.json")
+    nt.to_json(RESULTSDIR+"navtrials.json")
+
+if __name__ == '__main__':
+    fire.Fire()</code></pre>
+<p>Third, we run <code>prep_data.py</code>:</p>
+<pre><code>import pandas as pd
+import numpy as np
+import seaborn as sns
+from vgc_project import utils, gridutils
+from msdm.domains import GridWorld
+from vgc_project.modelinterface import create_modeling_interface
+
+import json
+from functools import lru_cache
+from itertools import combinations, product
+import warnings
+from tqdm import tqdm
+sem = lambda c: np.std(c)/np.sqrt(np.sum(c != np.nan))
+import matplotlib.pyplot as plt
+import sys
+import logging
+logger = logging.getLogger()
+logging.basicConfig(stream=sys.stdout)
+logger.setLevel(logging.WARNING)
+
+import os
+DATA_DIRECTORY = "../experiments"
+
+# ========= #
+# Utilities #
+# ========= #
+@lru_cache()
+def make_gridworld(tile_array):
+    gw = GridWorld(
+        tile_array,
+        initial_features="S",
+        absorbing_features="G",
+        wall_features="#0123456789",
+        step_cost=-1
+    )
+    def plot(*args, **kwargs):
+        kwargs = {
+            "featurecolors": {
+                "#": 'k',
+                "G": "green",
+                **{k: 'mediumblue' for k in "0123456789"}
+            },
+            "plot_walls": False,
+            **kwargs
+        }
+        return GridWorld.plot(gw, *args, **kwargs)
+    gw.plot = plot
+    return gw
+
+def calc_nav_mindist(navtrial):
+    flocs = make_gridworld(mazes[navtrial['grid']]).feature_locations
+    dists = {}
+    for obs, locs in flocs.items():
+        if obs not in "0123456789":
+            continue
+        locs = [(l['x'], l['y']) for l in locs]
+        dist = gridutils.min_dist(navtrial['state_traj'], locs)
+        dists[f"obs-{obs}"] = dist['mindist']
+    return pd.Series(dists)
+
+def calc_nav_mindist_timestep(navtrial):
+    flocs = make_gridworld(mazes[navtrial['grid']]).feature_locations
+    steps = {}
+    for obs, locs in flocs.items():
+        if obs not in "0123456789":
+            continue
+        locs = [(l['x'], l['y']) for l in locs]
+        dist = gridutils.min_dist(navtrial['state_traj'], locs, sourcename='traj')
+        mindist_loc = (dist['mintrajloc.x'], dist['mintrajloc.y'])
+        mindist_step = max(i for i, loc in enumerate(navtrial['state_traj']) if tuple(loc) == mindist_loc)
+        steps[f"obs-{obs}"] = mindist_step
+    return pd.Series(steps)
+
+# ================= #
+# Model Predictions #
+# ================= #
+mazes_0_11 = json.load(open(os.path.join(DATA_DIRECTORY, "mazes/mazes_0-11.json"), 'r'))
+mazes_12_15 = json.load(open(os.path.join(DATA_DIRECTORY, "mazes/mazes_12-15.json"), 'r'))
+mazes = {
+    **{"-".join(k.split('-')[:-1]): tuple(v) for k,v in mazes_0_11.items()},
+    **{k: tuple(v) for k,v in mazes_12_15.items()}
+}
+
+mods = create_modeling_interface(joblib_cache_location="./_analysiscache")
+model_preds = []
+for grid, tile_array in mazes.items():
+    for obs in sorted(set("0123456789") &amp; set.union(*[set(r) for r in tile_array])):
+        preds = {
+            "grid": grid,
+            "obstacle": f"obs-{obs}",
+            **mods.predictions(tile_array, obs, seed=72193880),
+        }
+        model_preds.append(preds)
+model_preds = pd.DataFrame(model_preds)
+
+to_zscore = [
+    # 'vgc_weight',
+    'static_vgc_weight',
+    'dynamic_vgc_weight',
+    'log_traj_based_hitcount',
+    'graph_based_hitcount',
+    'goal_dist',
+    'start_dist',
+    'optpolicy_dist',
+    'walls_dist',
+    'center_dist',
+    'bottleneck_dist',
+    'sr_occ'
+]
+for col in to_zscore:
+    model_preds[col+"_Z"] = utils.zscore(model_preds[col])
+
+# ================= #
+# Experiment 1 Data #
+# ================= #
+@lru_cache()
+def get_exp1_nt():
+    def parse_exp1_navtrial(t):
+        t = t.sort_values('trialnum')
+        return pd.Series({
+            'state_traj': list(t['state']),
+            'initial_rt': t['rt'].iloc[0],
+            'total_rt': t['rt'].sum()
+        })
+    exp1_nt = pd.DataFrame(json.load(open(os.path.join(DATA_DIRECTORY, "exp1/data/navtrials.json"), 'r')))
+    exp1_nt = exp1_nt.groupby(['sessionId', 'round', 'grid', 'trans'])\
+        .apply(parse_exp1_navtrial).reset_index()
+    exp1_nt['grid'] = exp1_nt['grid'].apply(lambda gi: f"grid-{gi}")
+    return exp1_nt
+
+@lru_cache()
+def get_exp1_navdist():
+    exp1_nt = get_exp1_nt()
+    exp1_navdist = pd.concat([
+        exp1_nt[['sessionId', 'round', 'grid']],
+        exp1_nt.apply(calc_nav_mindist, axis=1)
+    ], axis=1).melt(id_vars=['sessionId', 'round', 'grid'], var_name="obstacle", value_name="nav_mindist")
+    return exp1_navdist
+
+@lru_cache()
+def get_exp1_navdist_timestep():
+    exp1_nt = get_exp1_nt()
+    exp1_navdist_timestep = pd.concat([
+        exp1_nt[['sessionId', 'round', 'grid']],
+        exp1_nt.apply(calc_nav_mindist_timestep, axis=1)
+    ], axis=1).melt(id_vars=['sessionId', 'round', 'grid'], var_name="obstacle", value_name="nav_mindist_timestep")
+    return exp1_navdist_timestep
+
+@lru_cache()
+def get_exp1_at():
+    print("Loading Experiment 1 Attention Trials")
+    exp1_at = pd.DataFrame(json.load(open(os.path.join(DATA_DIRECTORY, "exp1/data/attentiontrials.json"), 'r')))
+    exp1_at = exp1_at[['sessionId', 'round', 'grid', 'trans', 'probeobs', 'queryround', 'attention', 'rt']]\
+        .rename(columns={"probeobs": "obstacle", "queryround": "proberound"})
+    exp1_at['grid'] = exp1_at['grid'].apply(lambda gi: f"grid-{gi}")
+    exp1_at['obstacle'] = exp1_at['obstacle'].apply(lambda oi: f"obs-{oi}")
+    exp1_at['attention_N'] = utils.normalize(exp1_at['attention'], minval=-4, maxval=4)
+    exp1_navdist = get_exp1_navdist()
+    exp1_navdist_timestep = get_exp1_navdist_timestep()
+    exp1_at = exp1_at.\
+        merge(exp1_navdist, on=['sessionId', 'round', 'grid', 'obstacle']).\
+        merge(exp1_navdist_timestep, on=['sessionId', 'round', 'grid', 'obstacle'])
+    exp1_at['nav_mindist_Z'] = utils.zscore(exp1_at['nav_mindist'])
+    exp1_at['nav_mindist_timestep_Z'] = utils.zscore(exp1_at['nav_mindist_timestep'])
+    exp1_at = exp1_at.merge(model_preds)
+
+    #check that each column of data is unique
+    for c1, c2 in product(exp1_at.columns, repeat=2):
+        if c1 != c2:
+            assert not all(exp1_at[c1] == exp1_at[c2])
+    return exp1_at</code></pre>
+<!-- Data preparation following the analysis plan. -->
+<!-- ```{r include=F} -->
+<!-- ### Data Preparation -->
+<!-- #### Load Relevant Libraries and Functions -->
+<!-- #### Import data -->
+<!-- #### Data exclusion / filtering -->
+<!-- #### Prepare data for analysis - create columns etc. -->
+<!-- ``` -->
+</section>
+<section id="confirmatory-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="confirmatory-analysis">Confirmatory analysis</h3>
+<p>The analysis code can be found <a href="https://github.com/markkho/value-guided-construal/blob/main/analyses/exp-1.ipynb">here</a>.</p>
+<p><em>Side-by-side graph with original graph is ideal here</em></p>
+<p><span class="math inline">\(\chi^2\)</span> test for independence:</p>
+<pre><code>from itertools import product
+import json
+import matplotlib.pyplot as plt
+from matplotlib.colors import to_rgb
+from matplotlib.patches import Rectangle, Arrow, Circle
+import matplotlib
+matplotlib.rcParams['pdf.fonttype'] = 42
+
+import numpy as np
+import seaborn as sns
+import pandas as pd
+from scipy import stats
+
+from vgc_project.r import create_R_model_interface, ImmutableDataFrame
+from vgc_project.parameter_fit import create_fit_vgc_model_to_trials, Trial
+
+joblib_cache_location = "./_analysiscache"
+rmods = create_R_model_interface(joblib_cache_location=joblib_cache_location)
+fit_vgc_model_to_trials = create_fit_vgc_model_to_trials(joblib_cache_location=joblib_cache_location)
+
+import analysisutils
+from analysisutils import predictor_names, short_predictor_names
+from prep_data import \
+    mazes,\
+    model_preds,\
+    get_exp1_at
+
+exp1_at = get_exp1_at("exp1/data/pilot_b/")
+
+exp1_means = exp1_at.groupby(['grid', 'obstacle'])[["attention_N", "static_vgc_weight"]].mean().reset_index()
+exp1_contab = pd.crosstab(exp1_means["attention_N"] &gt;= .5, exp1_means["static_vgc_weight"] &gt;= .5)
+chi2, pval, dof, exp = stats.chi2_contingency(exp1_contab, correction=False)
+chi2_effectsize_w = np.sqrt(chi2/len(exp1_means))
+pval = analysisutils.pval_to_string(pval)
+exp1_chi2_res = f"$\chi^2({dof}, N={len(exp1_means)})={chi2:.2f}$, $p {pval}$, effect size $w = {chi2_effectsize_w:.2f}$"
+
+print(exp1_chi2_res)</code></pre>
+<p>Output (pilot B):</p>
+<pre><code>$\chi^2(1, N=84)=4.42$, $p = 0.036$, effect size $w = 0.23$</code></pre>
+<p>Output (Original):</p>
+<pre><code>$\chi^2(1, N=84)=23.03$, $p = 1.6\times 10^{-6}$, effect size $w = 0.52$</code></pre>
+</section>
+<section id="exploratory-analyses" class="level3">
+<h3 class="anchored" data-anchor-id="exploratory-analyses">Exploratory analyses</h3>
+<p>Initial experiment mean awareness histogram (Fig. 3a from paper):</p>
+<pre><code>expmod_means = exp1_at.groupby(['grid', 'obstacle'])[['attention_N', "static_vgc_weight"]].\
+    mean().reset_index()
+    
+# create figure
+fig_width_mm = 50
+fig_height_mm = 50
+mm_to_inch = 1/25.4 
+
+assert fig_width_mm &lt;= 182
+assert fig_height_mm &lt;= 245
+
+import matplotlib.gridspec as gridspec
+fig, ax = plt.subplots(
+    1, 1, 
+    figsize=(fig_width_mm*mm_to_inch, fig_height_mm*mm_to_inch),
+    dpi=300
+)
+for spine in ['top','bottom','left','right']:
+    ax.spines[spine].set_linewidth(.5)
+    
+    
+bins = np.linspace(0, 1, 10)
+sns.histplot(
+    expmod_means[expmod_means['static_vgc_weight'] &gt;= .5]['attention_N'],
+    ax=ax, kde=False, bins=bins, color='mediumblue', linewidth=.5
+)
+sns.histplot(
+    expmod_means[expmod_means['static_vgc_weight'] &lt; .5]['attention_N'],
+    ax=ax, kde=False, bins=bins, color='gainsboro', linewidth=.5
+)
+
+for _, row in expmod_means.iterrows():
+    ax.plot(
+        # [row['attention_N'], row['attention_N']], [-2, -.1],
+        [row['attention_N'], ], [-1+(.5 - np.random.random())*.8],
+        marker='.',
+        alpha=.5,
+        markersize=6,
+        # markercolor='mediumblue' if row['vgc_weight'] &gt;= .5 else 'gainsboro'
+        color='mediumblue' if row['static_vgc_weight'] &gt;= .5 else 'gainsboro',
+        markeredgewidth=.25,
+        markeredgecolor='k'
+    )
+
+
+ax.tick_params(axis='both', width=.5)
+ax.set(**dict(
+    xticks=[0, .25, .5, .75, 1],
+    xlim=(0, 1),
+    ylim=(-2, 15),
+    yticks=[0, 5, 10, 15],
+))
+ax.set_xlabel('Initial Experiment Mean Awareness', fontsize=7, fontfamily = "Arial")
+ax.set_ylabel('Count', fontsize=7, fontfamily = "Arial")
+plt.yticks(fontname = "Arial", fontsize=7)
+plt.xticks(fontname = "Arial", fontsize=7)
+# fig.savefig("results/exp1_hist_svgc.pdf")
+# fig.set_dpi(150)</code></pre>
+<p>Output (Pilot B): <img src="mean_awareness_histogram_replication.png" class="img-fluid" alt="Image"></p>
+<p>Output (Original): <img src="mean_awareness_histogram.png" class="img-fluid" alt="Image"></p>
+<p>Output (Model prediction): <img src="maze_awareness_predictions.png" class="img-fluid" alt="Image"></p>
+<p>Output (Pilot B): <img src="maze_awareness_responses_replication.png" class="img-fluid" alt="Image"></p>
+<p>Output (Original): <img src="maze_awareness_responses.png" class="img-fluid" alt="Image"></p>
+</section>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<section id="summary-of-replication-attempt" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-replication-attempt">Summary of Replication Attempt</h3>
+<p>Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.</p>
+</section>
+<section id="commentary" class="level3">
+<h3 class="anchored" data-anchor-id="commentary">Commentary</h3>
+<p>Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt. None of these need to be long.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
