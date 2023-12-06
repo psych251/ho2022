@@ -59,3 +59,21 @@ on `(jupyter_notebook) justyang:ho2022/ (main✗) $`:
 2. `python experiments/exp1/pull_results.py pull_data_from_server --EXP_NAME=pilot_a --RAWRESULTS_DIR=data/pilot_a --CREDENTIALS_FILE=.creds.json`
 3. `python experiments/exp1/pull_results.py parse_raw_datafiles --BASEGRIDS_FILENAME=experiments/mazes/mazes_0-11.json --RAWRESULTS_DIR=data/pilot_a --EXP_CONFIG_FILE=experiment.psiturkapp/static/config/exp1.0-config.json --EXP_RESULTS_DIR=experiments/exp1/data/pilot_a/`
 4. `python experiments/exp1/prep_results.py do_exclusions --BASEGRIDS_FILENAME=experiments/mazes/mazes_0-11.json --RESULTSDIR=experiments/exp1/data/pilot_a/`
+
+Final participant sample size after exclusions: 
+```
+(jupyter_notebook) justyang:ho2022/ (main✗) $ python experiments/exp1/prep_results.py do_exclusions --BASEGRIDS_FILENAME=experiments/mazes/mazes_0-11.json --RESULTSDIR=experiments/exp1/data/full_data_collection/                                                                                                                                                                                                                                      103 of 105 with >67.2 recorded trials
+Performing Exclusions
+96 of 103 passed 2 of 3 comprehension checks
+non_consec_trials: 	0 of 1152
+multiple_first_trials: 	0 of 1152
+high_total_nav_time: 	20 of 1152
+high_last_3_steps_rt: 	10 of 1152
+high_initial_step_time: 	10 of 1152
+high_non_initial_step_rt: 	40 of 1152
+any_exclusion: 	59 of 1152
+Participants with 67.2 of 84 valid response trials: 88 of 96
+Total remaining participants: 88
+Total remaining rounds: 1031
+Total remaining responses: 7217
+```
