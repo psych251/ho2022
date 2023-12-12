@@ -80,15 +80,13 @@ I also aim to reconstruct the plot from figure 3a, which is a histogram of parti
 
 The study will be exactly the same, with the exception of a separate random sample of participants recruited on Prolific and a separate consent form.
 
-<!-- ### Methods Addendum (Post Data Collection) -->
+### Methods Addendum (Post Data Collection)
 
-<!-- You can comment this section out prior to final report with data collection. -->
+#### Actual Sample 
+We ended up recruiting a sample of 100 participants. After applying data exclusions from rules spelled out in the analysis plan, we ended up with a sample size of 88 participants.
 
-<!-- #### Actual Sample -->
-<!--   Sample size, demographics, data exclusions based on rules spelled out in analysis plan~~ -->
-
-<!-- #### Differences from pre-data collection methods plan -->
-<!--   Any differences from what was described as the original plan, or “none”. -->
+#### Differences from pre-data collection methods plan 
+none. 
 
 ## Results
 
@@ -598,25 +596,9 @@ def get_exp1_at():
     return exp1_at
 ```
 
-<!-- Data preparation following the analysis plan. -->
-
-<!-- ```{r include=F} -->
-<!-- ### Data Preparation -->
-
-<!-- #### Load Relevant Libraries and Functions -->
-
-<!-- #### Import data -->
-
-<!-- #### Data exclusion / filtering -->
-
-<!-- #### Prepare data for analysis - create columns etc. -->
-<!-- ``` -->
-
 ### Confirmatory analysis
 
 The analysis code can be found [here](https://github.com/markkho/value-guided-construal/blob/main/analyses/exp-1.ipynb).
-
-*Side-by-side graph with original graph is ideal here*
 
 $\chi^2$ test for independence:
 ```
@@ -659,9 +641,9 @@ exp1_chi2_res = f"$\chi^2({dof}, N={len(exp1_means)})={chi2:.2f}$, $p {pval}$, e
 print(exp1_chi2_res)
 ```
 
-Output (pilot B):
+Output (replication):
 ```
-$\chi^2(1, N=84)=4.42$, $p = 0.036$, effect size $w = 0.23$
+$\chi^2(1, N=84)=23.02$, $p = 1.6 \times 10^{-6}$, effect size $w = 0.52$
 ```
 
 Output (Original):
@@ -734,7 +716,7 @@ plt.xticks(fontname = "Arial", fontsize=7)
 # fig.set_dpi(150)
 ```
 
-Output (Pilot B):
+Output (Replication):
 ![Image](mean_awareness_histogram_replication.png)
 
 Output (Original):
@@ -743,7 +725,7 @@ Output (Original):
 Output (Model prediction):
 ![Image](maze_awareness_predictions.png)
 
-Output (Pilot B):
+Output (Replication):
 ![Image](maze_awareness_responses_replication.png)
 
 Output (Original):
@@ -754,8 +736,8 @@ Output (Original):
 
 ### Summary of Replication Attempt
 
-Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.  
+Our primary result was a $\chi^2$ test for independence. Specifically, the authors split the set of 84 obstacles across mazes on the basis of whether the value-guided construal model assigned a probability of less than or equal to 0.5 or greater than 0.5. They then similarly split the obstacles on the basis of whether mean awareness responses were less than or equal to 0.5 or greater than 0.5, and with the $\chi^2$ test for independence found that this split was predicted by value-guided construal $\chi^2(1, N=84)=23.02$, $p = 1.6 \times 10^{-6}$, effect size $w = 0.52$. Thus, we see that the result closely replicated the original paper, suggesting that people's responses align well with how an ideal, cognitively limited decision-maker should form value-guided construals that balance the complexity of a representation and its use for planning and acting. 
 
 ### Commentary
 
-Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
+In addition to our primary result, we find found that our results also closely matched the rest of the figures in figure 3 of the original paper. 

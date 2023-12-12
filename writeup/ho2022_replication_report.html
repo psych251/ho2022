@@ -57,6 +57,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure">Procedure</a></li>
   <li><a href="#analysis-plan" id="toc-analysis-plan" class="nav-link" data-scroll-target="#analysis-plan">Analysis Plan</a></li>
   <li><a href="#differences-from-original-study" id="toc-differences-from-original-study" class="nav-link" data-scroll-target="#differences-from-original-study">Differences from Original Study</a></li>
+  <li><a href="#methods-addendum-post-data-collection" id="toc-methods-addendum-post-data-collection" class="nav-link" data-scroll-target="#methods-addendum-post-data-collection">Methods Addendum (Post Data Collection)</a></li>
   </ul></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
   <ul class="collapse">
@@ -156,12 +157,17 @@ ul.task-list li input[type="checkbox"] {
 <section id="differences-from-original-study" class="level3">
 <h3 class="anchored" data-anchor-id="differences-from-original-study">Differences from Original Study</h3>
 <p>The study will be exactly the same, with the exception of a separate random sample of participants recruited on Prolific and a separate consent form.</p>
-<!-- ### Methods Addendum (Post Data Collection) -->
-<!-- You can comment this section out prior to final report with data collection. -->
-<!-- #### Actual Sample -->
-<!--   Sample size, demographics, data exclusions based on rules spelled out in analysis plan~~ -->
-<!-- #### Differences from pre-data collection methods plan -->
-<!--   Any differences from what was described as the original plan, or “none”. -->
+</section>
+<section id="methods-addendum-post-data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="methods-addendum-post-data-collection">Methods Addendum (Post Data Collection)</h3>
+<section id="actual-sample" class="level4">
+<h4 class="anchored" data-anchor-id="actual-sample">Actual Sample</h4>
+<p>We ended up recruiting a sample of 100 participants. After applying data exclusions from rules spelled out in the analysis plan, we ended up with a sample size of 88 participants.</p>
+</section>
+<section id="differences-from-pre-data-collection-methods-plan" class="level4">
+<h4 class="anchored" data-anchor-id="differences-from-pre-data-collection-methods-plan">Differences from pre-data collection methods plan</h4>
+<p>none.</p>
+</section>
 </section>
 </section>
 <section id="results" class="level2">
@@ -660,19 +666,10 @@ def get_exp1_at():
         if c1 != c2:
             assert not all(exp1_at[c1] == exp1_at[c2])
     return exp1_at</code></pre>
-<!-- Data preparation following the analysis plan. -->
-<!-- ```{r include=F} -->
-<!-- ### Data Preparation -->
-<!-- #### Load Relevant Libraries and Functions -->
-<!-- #### Import data -->
-<!-- #### Data exclusion / filtering -->
-<!-- #### Prepare data for analysis - create columns etc. -->
-<!-- ``` -->
 </section>
 <section id="confirmatory-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="confirmatory-analysis">Confirmatory analysis</h3>
 <p>The analysis code can be found <a href="https://github.com/markkho/value-guided-construal/blob/main/analyses/exp-1.ipynb">here</a>.</p>
-<p><em>Side-by-side graph with original graph is ideal here</em></p>
 <p><span class="math inline">\(\chi^2\)</span> test for independence:</p>
 <pre><code>from itertools import product
 import json
@@ -711,8 +708,8 @@ pval = analysisutils.pval_to_string(pval)
 exp1_chi2_res = f"$\chi^2({dof}, N={len(exp1_means)})={chi2:.2f}$, $p {pval}$, effect size $w = {chi2_effectsize_w:.2f}$"
 
 print(exp1_chi2_res)</code></pre>
-<p>Output (pilot B):</p>
-<pre><code>$\chi^2(1, N=84)=4.42$, $p = 0.036$, effect size $w = 0.23$</code></pre>
+<p>Output (replication):</p>
+<pre><code>$\chi^2(1, N=84)=23.02$, $p = 1.6 \times 10^{-6}$, effect size $w = 0.52$</code></pre>
 <p>Output (Original):</p>
 <pre><code>$\chi^2(1, N=84)=23.03$, $p = 1.6\times 10^{-6}$, effect size $w = 0.52$</code></pre>
 </section>
@@ -777,10 +774,10 @@ plt.yticks(fontname = "Arial", fontsize=7)
 plt.xticks(fontname = "Arial", fontsize=7)
 # fig.savefig("results/exp1_hist_svgc.pdf")
 # fig.set_dpi(150)</code></pre>
-<p>Output (Pilot B): <img src="mean_awareness_histogram_replication.png" class="img-fluid" alt="Image"></p>
+<p>Output (Replication): <img src="mean_awareness_histogram_replication.png" class="img-fluid" alt="Image"></p>
 <p>Output (Original): <img src="mean_awareness_histogram.png" class="img-fluid" alt="Image"></p>
 <p>Output (Model prediction): <img src="maze_awareness_predictions.png" class="img-fluid" alt="Image"></p>
-<p>Output (Pilot B): <img src="maze_awareness_responses_replication.png" class="img-fluid" alt="Image"></p>
+<p>Output (Replication): <img src="maze_awareness_responses_replication.png" class="img-fluid" alt="Image"></p>
 <p>Output (Original): <img src="maze_awareness_responses.png" class="img-fluid" alt="Image"></p>
 </section>
 </section>
@@ -788,11 +785,11 @@ plt.xticks(fontname = "Arial", fontsize=7)
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
 <section id="summary-of-replication-attempt" class="level3">
 <h3 class="anchored" data-anchor-id="summary-of-replication-attempt">Summary of Replication Attempt</h3>
-<p>Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.</p>
+<p>Our primary result was a <span class="math inline">\(\chi^2\)</span> test for independence. Specifically, the authors split the set of 84 obstacles across mazes on the basis of whether the value-guided construal model assigned a probability of less than or equal to 0.5 or greater than 0.5. They then similarly split the obstacles on the basis of whether mean awareness responses were less than or equal to 0.5 or greater than 0.5, and with the <span class="math inline">\(\chi^2\)</span> test for independence found that this split was predicted by value-guided construal <span class="math inline">\(\chi^2(1, N=84)=23.02\)</span>, <span class="math inline">\(p = 1.6 \times 10^{-6}\)</span>, effect size <span class="math inline">\(w = 0.52\)</span>. Thus, we see that the result closely replicated the original paper, suggesting that people’s responses align well with how an ideal, cognitively limited decision-maker should form value-guided construals that balance the complexity of a representation and its use for planning and acting.</p>
 </section>
 <section id="commentary" class="level3">
 <h3 class="anchored" data-anchor-id="commentary">Commentary</h3>
-<p>Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt. None of these need to be long.</p>
+<p>In addition to our primary result, we find found that our results also closely matched the rest of the figures in figure 3 of the original paper.</p>
 </section>
 </section>
 
